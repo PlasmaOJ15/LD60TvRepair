@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var node_2d: Node2D = $".."
+@onready var bounce_sfx: AudioStreamPlayer2D = $BounceSFX
 
 const SPEED = 300.0
 const BOUNCE_SPEED = 70
@@ -23,3 +24,5 @@ func _physics_process(delta: float) -> void:
 		var bounceVector = Vector2(0, -BOUNCE_SPEED)
 		if collision_info:
 			velocity = velocity.bounce(collision_info.get_normal())+bounceVector+randomVector;
+			#sfx
+			bounce_sfx.play();
