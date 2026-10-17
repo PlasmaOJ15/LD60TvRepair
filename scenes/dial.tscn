@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bk0g265hho5r4"]
 
 [ext_resource type="Script" uid="uid://bdisp3ctcbhbp" path="res://scripts/dial.gd" id="1_wi0ro"]
+[ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_8jcdt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 37.0
@@ -33,6 +34,9 @@ color = Color(0.5069202, 0.5069202, 0.5069201, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1020952954]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="dialTick" type="AudioStreamPlayer2D" parent="." unique_id=1969473659]
+stream = ExtResource("2_8jcdt")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

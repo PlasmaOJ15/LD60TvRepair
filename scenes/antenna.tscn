@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dci3j7scbyxwu"]
 
 [ext_resource type="Script" uid="uid://loye2gyhjvf1" path="res://scripts/antenna.gd" id="1_cymb1"]
+[ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_lyb31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cymb1"]
 
@@ -25,12 +26,16 @@ offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.525894, 0.52589405, 0.525894, 1)
 
-[node name="aimProxy" type="Node2D" parent="." unique_id=1937303953]
+[node name="Area2D" type="Area2D" parent="assets" unique_id=930345354]
+position = Vector2(160, 0)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=930345354]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451270202]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="assets/Area2D" unique_id=1451270202]
 shape = SubResource("RectangleShape2D_cymb1")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="aimProxy" type="Node2D" parent="." unique_id=1937303953]
+
+[node name="dialTick" type="AudioStreamPlayer2D" parent="." unique_id=997717863]
+stream = ExtResource("2_lyb31")
+
+[connection signal="mouse_entered" from="assets/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="assets/Area2D" to="." method="_on_area_2d_mouse_exited"]

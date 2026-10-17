@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
+[ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
+[ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
+[ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
+[ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
 
 [node name="TVRepair" type="Node2D" unique_id=754929928]
 
@@ -40,6 +44,7 @@ offset_bottom = 455.0
 color = Color(1, 0, 0, 1)
 
 [node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
+script = ExtResource("2_p04im")
 
 [node name="assets" type="Node2D" parent="Shelf" unique_id=1839037105]
 
@@ -54,3 +59,14 @@ color = Color(0.5513578, 0.55135787, 0.5513578, 1)
 
 [node name="TV" parent="Repair" unique_id=1870081773 instance=ExtResource("2_onf2w")]
 position = Vector2(580, 499)
+
+[node name="correctTic" type="AudioStreamPlayer2D" parent="." unique_id=2010563394]
+position = Vector2(580, 504)
+stream = ExtResource("4_cr3sw")
+
+[node name="ButtonGame" parent="." unique_id=306496527 instance=ExtResource("5_6vb1h")]
+scale = Vector2(0.4, 0.4)
+
+[node name="Node2D" parent="." unique_id=1874709638 instance=ExtResource("6_liy50")]
+position = Vector2(605, 174.99998)
+scale = Vector2(0.405, 0.405)

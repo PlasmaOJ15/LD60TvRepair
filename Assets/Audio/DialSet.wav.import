@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bi2fqwrtkxu7h"
-path="res://.godot/imported/DialSet.wav-88efec1b6e670847f5dca70f8109cc6a.sample"
+path="res://.godot/imported/DialSet.wav-3d7c8358cff06742922db79e90665f63.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/DialSet.wav"
-dest_files=["res://.godot/imported/DialSet.wav-88efec1b6e670847f5dca70f8109cc6a.sample"]
+source_file="res://assets/Audio/DialSet.wav"
+dest_files=["res://.godot/imported/DialSet.wav-3d7c8358cff06742922db79e90665f63.sample"]
 
 [params]
 
