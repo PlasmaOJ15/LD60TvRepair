@@ -74,6 +74,3 @@ shape = SubResource("RectangleShape2D_buomr")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1937177772]
 position = Vector2(594, -66)
 shape = SubResource("RectangleShape2D_buomr")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2035586943]
-position = Vector2(36, -69)

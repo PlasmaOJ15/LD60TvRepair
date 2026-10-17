@@ -6,6 +6,8 @@ extends Node2D
 
 @onready var aim_proxy: Node2D = $aimProxy
 
+@onready var dial_tick: AudioStreamPlayer2D = $dialTick
+
 # are you hovering over the antenna
 var canClick := false
 # are you actively changing the antenna
@@ -23,7 +25,8 @@ func _process(_delta: float) -> void:
 		# Look at the mouse and do some wacky math, returning a value of
 		# 0 - 18
 		aim_proxy.look_at(get_global_mouse_position())
-		if (int(aim_proxy.rotation_degrees) % 360)/snapDivider != currPos:
+		if (int(aim_proxy.rotation_degrees) % 360 + 180)/snapDivider != currPos:
+			dial_tick.play()
 			if ((int(aim_proxy.rotation_degrees) % 360) < -180):
 				aim_proxy.rotation_degrees = -180
 			elif ((int(aim_proxy.rotation_degrees) % 360) > 0):
