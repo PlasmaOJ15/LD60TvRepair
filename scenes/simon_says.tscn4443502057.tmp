@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dk7dyqq6tbbc3"]
+
+[ext_resource type="Script" uid="uid://wfiovp3v5c6q" path="res://scenes/simonSaysManager.gd" id="1_rkrt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tji7j"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="Theme" id="Theme_ym2wr"]
+Button/styles/disabled = null
+Button/styles/normal = SubResource("StyleBoxFlat_tji7j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkrt7"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="Theme" id="Theme_raf0d"]
+Button/styles/disabled = null
+Button/styles/normal = SubResource("StyleBoxFlat_rkrt7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raf0d"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_gmbsi"]
+Button/styles/disabled = null
+Button/styles/normal = SubResource("StyleBoxFlat_raf0d")
+
+[node name="SimonSays" type="Node2D" unique_id=1031054397]
+script = ExtResource("1_rkrt7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2132418639]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=733018305]
+visible = false
+z_index = 2
+offset_left = -577.0
+offset_top = -335.0
+offset_right = 580.0
+offset_bottom = 325.0
+color = Color(0, 1, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1893689982]
+offset_left = -499.0
+offset_top = -108.0
+offset_right = -255.0
+offset_bottom = 136.0
+theme = SubResource("Theme_ym2wr")
+
+[node name="Button2" type="Button" parent="." unique_id=1649212978]
+offset_left = -129.0
+offset_top = -108.0
+offset_right = 115.0
+offset_bottom = 136.0
+theme = SubResource("Theme_raf0d")
+
+[node name="Button3" type="Button" parent="." unique_id=1547481797]
+offset_left = 225.0
+offset_top = -108.0
+offset_right = 469.0
+offset_bottom = 136.0
+theme = SubResource("Theme_gmbsi")
+
+[node name="EnterPatternTimer" type="Timer" parent="." unique_id=919259709]
+wait_time = 6.0
+one_shot = true
+
+[node name="TimeUntilNextPattern" type="Timer" parent="." unique_id=1169950629]
+wait_time = 5.0
+one_shot = true
+
+[node name="FlashColorTimer" type="Timer" parent="." unique_id=566207566]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="EnterPatternTimer" to="." method="_on_enter_pattern_timer_timeout"]
+[connection signal="timeout" from="TimeUntilNextPattern" to="." method="_on_time_until_next_pattern_timeout"]
+[connection signal="timeout" from="FlashColorTimer" to="." method="_on_flash_color_timer_timeout"]
