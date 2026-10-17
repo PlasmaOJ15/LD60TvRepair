@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if enteringFrame:
 		position.x = move_toward(position.x, 9 + offset, 50)
 		if position.x == 9 + offset:

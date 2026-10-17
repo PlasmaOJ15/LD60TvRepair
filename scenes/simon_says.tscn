@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://wfiovp3v5c6q" path="res://scenes/simonSaysManager.gd" id="1_rkrt7"]
 [ext_resource type="Script" uid="uid://cbijtd64fvssw" path="res://scenes/SignalGroup.gd" id="2_raf0d"]
+[ext_resource type="AudioStream" uid="uid://cr5x6opjw877i" path="res://assets/Audio/gameReady (1).wav" id="3_1jb2c"]
+[ext_resource type="AudioStream" uid="uid://c53gmg5uatbgq" path="res://assets/Audio/gameReady (2).wav" id="4_to3xi"]
+[ext_resource type="AudioStream" uid="uid://bw6utbp3sh58a" path="res://assets/Audio/gameReady (3).wav" id="5_hvdy3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tji7j"]
 bg_color = Color(0, 1, 0, 1)
@@ -23,6 +26,12 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_gmbsi"]
 Button/styles/disabled = null
 Button/styles/normal = SubResource("StyleBoxFlat_raf0d")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
+streams_count = 3
+stream_0/stream = ExtResource("3_1jb2c")
+stream_1/stream = ExtResource("4_to3xi")
+stream_2/stream = ExtResource("5_hvdy3")
 
 [node name="SimonSays" type="Node2D" unique_id=1031054397]
 script = ExtResource("1_rkrt7")
@@ -69,8 +78,10 @@ wait_time = 5.0
 one_shot = true
 
 [node name="FlashColorTimer" type="Timer" parent="." unique_id=566207566]
-wait_time = 2.0
 one_shot = true
+
+[node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=1962923899]
+stream = SubResource("AudioStreamRandomizer_g4v7s")
 
 [connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Red" to="." method="_on_red_pressed"]
