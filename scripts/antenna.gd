@@ -31,11 +31,12 @@ func _process(_delta: float) -> void:
 		# 0 - 18
 		aim_proxy.look_at(get_global_mouse_position())
 		if (int(aim_proxy.rotation_degrees) % 360 + 180)/snapDivider != currPos:
-			dial_tick.play()
 			if ((int(aim_proxy.rotation_degrees) % 360) < -180):
 				aim_proxy.rotation_degrees = -180
 			elif ((int(aim_proxy.rotation_degrees) % 360) > 0):
 				aim_proxy.rotation_degrees = 0
+			else:
+				dial_tick.play()
 			currPos = ((int(aim_proxy.rotation_degrees) % 360 + 180)/snapDivider)
 			assets.rotation_degrees = (currPos+18) * snapDivider
 			print(currPos)

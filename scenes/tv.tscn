@@ -17,17 +17,21 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("2_ovwuf")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwuf"]
+atlas = ExtResource("2_ovwuf")
+region = Rect2(0, 192, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbv82"]
 atlas = ExtResource("2_ovwuf")
-region = Rect2(0, 64, 64, 64)
+region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6m8rr"]
 atlas = ExtResource("2_ovwuf")
-region = Rect2(64, 64, 64, 64)
+region = Rect2(128, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4knv4"]
 atlas = ExtResource("2_ovwuf")
-region = Rect2(128, 64, 64, 64)
+region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -47,17 +51,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwuf")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pbv82")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6m8rr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4knv4")
 }],
 "loop": 1,
 "name": &"lookUp",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4knv4")
+}],
+"loop": 0,
+"name": &"transition",
+"speed": 12.0
 }]
 
 [node name="TV" type="Node2D" unique_id=1870081773]
@@ -100,3 +112,5 @@ position = Vector2(-87, -123)
 [node name="a2" parent="." unique_id=1726661583 instance=ExtResource("2_0vvss")]
 position = Vector2(64, -121)
 flippedHand = true
+
+[connection signal="animation_finished" from="assets/PlayerSprite" to="." method="_on_player_sprite_animation_finished"]
