@@ -11,13 +11,9 @@ var animInt = 0
 func _ready() -> void:
 	pass # Replace with function body.
 
-func playAnim(animInt):
-	self.animInt = animInt
+func playAnim(animIntA):
+	animInt = animIntA
 	player_sprite.play("transition")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func disable():
 	d_1.isActive = false
@@ -26,10 +22,10 @@ func disable():
 	a_2.isActive = false
 
 func getLeftIsActive():
-	return d_1.getIsActive() or d_2.getIsActive() or a_1.getIsActive()
+	return a_1.getIsActive()
 
 func getRightIsActive():
-	return a_2.getIsActive()
+	return d_1.getIsActive() or d_2.getIsActive() or a_2.getIsActive()
 
 func getValue(item: int) -> int:
 	if item == 0 :

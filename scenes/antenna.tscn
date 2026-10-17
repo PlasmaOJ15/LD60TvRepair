@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://loye2gyhjvf1" path="res://scripts/antenna.gd" id="1_cymb1"]
 [ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="2_dwh18"]
+[ext_resource type="Texture2D" uid="uid://dfq05hc0k8mrs" path="res://assets/antenna.png" id="2_e3nv8"]
 [ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_lyb31"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cymb1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_utw6n"]
+radius = 23.021729
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwh18"]
 atlas = ExtResource("2_dwh18")
@@ -40,31 +42,22 @@ script = ExtResource("1_cymb1")
 
 [node name="assets" type="Node2D" parent="." unique_id=2077401758]
 
-[node name="ColorRect" type="ColorRect" parent="assets" unique_id=1761129910]
-offset_left = -3.0
-offset_top = -2.0
-offset_right = 149.0
-offset_bottom = 2.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=2085202067]
-offset_left = 150.0
-offset_top = -10.0
-offset_right = 170.0
-offset_bottom = 10.0
-mouse_filter = 2
-color = Color(0.525894, 0.52589405, 0.525894, 1)
+[node name="Antenna" type="Sprite2D" parent="assets" unique_id=531285992]
+position = Vector2(93, -3.8146973e-06)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("2_e3nv8")
 
 [node name="Area2D" type="Area2D" parent="assets" unique_id=930345354]
 position = Vector2(160, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assets/Area2D" unique_id=1451270202]
-shape = SubResource("RectangleShape2D_cymb1")
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_utw6n")
 
 [node name="handSprite" type="AnimatedSprite2D" parent="assets" unique_id=2008561727]
 visible = false
-position = Vector2(165, 2)
+position = Vector2(181, 2)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g4v7s")

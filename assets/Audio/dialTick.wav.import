@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ckakdws6xt41f"
-path="res://.godot/imported/dialTick.wav-3ab0b920c87561f09f2ff1437222dce1.sample"
+path="res://.godot/imported/dialTick.wav-9160d34e7941c71c82ca3845f553491b.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/dialTick.wav"
-dest_files=["res://.godot/imported/dialTick.wav-3ab0b920c87561f09f2ff1437222dce1.sample"]
+source_file="res://assets/Audio/dialTick.wav"
+dest_files=["res://.godot/imported/dialTick.wav-9160d34e7941c71c82ca3845f553491b.sample"]
 
 [params]
 

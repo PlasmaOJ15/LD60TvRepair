@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if currUp:
 		if camera.position.y != camPosUp.y:
 			camera.position.y = move_toward(camera.position.y, camPosUp.y, 25)

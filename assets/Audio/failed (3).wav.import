@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ookfdrr3asn5"
+path="res://.godot/imported/failed (3).wav-b28231b8e6f515a08f00b546dc76221c.sample"
+
+[deps]
+
+source_file="res://assets/Audio/failed (3).wav"
+dest_files=["res://.godot/imported/failed (3).wav-b28231b8e6f515a08f00b546dc76221c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

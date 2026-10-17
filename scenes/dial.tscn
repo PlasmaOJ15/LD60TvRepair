@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bdisp3ctcbhbp" path="res://scripts/dial.gd" id="1_wi0ro"]
 [ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_8jcdt"]
 [ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="2_730i4"]
+[ext_resource type="Texture2D" uid="uid://d1u2xhqhfbqqd" path="res://assets/dial.png" id="3_8ovxx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_730i4"]
 atlas = ExtResource("2_730i4")
@@ -34,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 37.0
+radius = 27.0
 
 [node name="dial" type="Node2D" unique_id=1828121356]
 script = ExtResource("1_wi0ro")
@@ -43,28 +44,18 @@ script = ExtResource("1_wi0ro")
 
 [node name="assets" type="Node2D" parent="." unique_id=76200230]
 
-[node name="ColorRect" type="ColorRect" parent="assets" unique_id=876782641]
-offset_left = -26.0
-offset_top = -26.0
-offset_right = 26.0
-offset_bottom = 26.0
-mouse_filter = 2
-color = Color(0.41981313, 0.41981313, 0.4198131, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=477370921]
-offset_left = -1.0
-offset_top = -6.0
-offset_right = 26.0
-offset_bottom = 6.0
-mouse_filter = 2
-color = Color(0.9088109, 0.9088109, 0.9088109, 1)
+[node name="Dial" type="Sprite2D" parent="assets" unique_id=970475764]
+position = Vector2(8.344651e-07, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("3_8ovxx")
 
 [node name="handSprite" type="AnimatedSprite2D" parent="assets" unique_id=192872126]
 visible = false
-position = Vector2(8, -8)
+position = Vector2(0, -8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
+flip_h = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858122326]
 

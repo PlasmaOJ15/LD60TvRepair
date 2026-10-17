@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmxhhpu6rm6ft" path="res://scripts/tv.gd" id="1_lnbu4"]
 [ext_resource type="PackedScene" uid="uid://bk0g265hho5r4" path="res://scenes/dial.tscn" id="1_nqyhj"]
 [ext_resource type="PackedScene" uid="uid://dci3j7scbyxwu" path="res://scenes/antenna.tscn" id="2_0vvss"]
+[ext_resource type="Texture2D" uid="uid://7j5lk8x12trr" path="res://assets/tv.png" id="2_ie1qu"]
 [ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="2_ovwuf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie1qu"]
@@ -78,39 +79,28 @@ script = ExtResource("1_lnbu4")
 [node name="assets" type="Node2D" parent="." unique_id=1084081004]
 position = Vector2(-184, -126)
 
-[node name="ColorRect" type="ColorRect" parent="assets" unique_id=1779990253]
-offset_right = 359.0
-offset_bottom = 247.0
-mouse_filter = 2
-color = Color(0.5069202, 0.5069202, 0.5069202, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=1739588230]
-offset_left = 97.0
-offset_top = 18.0
-offset_right = 338.0
-offset_bottom = 226.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="Tv" type="Sprite2D" parent="assets" unique_id=1333221435]
+position = Vector2(184, 90)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ie1qu")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="assets" unique_id=2055010602]
-position = Vector2(212.00002, 130)
+position = Vector2(142.00003, 135)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 
 [node name="d1" parent="." unique_id=1945050643 instance=ExtResource("1_nqyhj")]
-position = Vector2(-139, -53)
+position = Vector2(138, -54)
 
 [node name="d2" parent="." unique_id=1470588439 instance=ExtResource("1_nqyhj")]
-position = Vector2(-139, 43)
+position = Vector2(135, 42)
 
 [node name="a1" parent="." unique_id=791403272 instance=ExtResource("2_0vvss")]
-position = Vector2(-87, -123)
+position = Vector2(-96, -141)
 
 [node name="a2" parent="." unique_id=1726661583 instance=ExtResource("2_0vvss")]
-position = Vector2(64, -121)
+position = Vector2(99, -141)
 flippedHand = true
 
 [connection signal="animation_finished" from="assets/PlayerSprite" to="." method="_on_player_sprite_animation_finished"]

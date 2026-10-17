@@ -47,7 +47,7 @@ func randomizeVals():
 	dialD = rng.randi_range(0,35)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if tv.getLeftIsActive():
 		hand_l.visible = false
 	else:
@@ -102,6 +102,7 @@ func _process(delta: float) -> void:
 			tv = newTV
 			repair.add_child(newTV)
 			randomizeVals()
+			Global.mouseBusy = false
 			active = true
 			enteringFrame = true
 		else:
