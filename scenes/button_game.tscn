@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b85km7tmsqm5h"]
 
-[ext_resource type="Script" uid="uid://bew56xncjsbq2" path="res://button.gd" id="1_2wekl"]
-[ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_exsrd"]
+[ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_apkqr"]
+[ext_resource type="Script" uid="uid://bew56xncjsbq2" path="res://scripts/button.gd" id="2_apkqr"]
 
 [node name="ButtonGame" type="Node2D" unique_id=306496527]
 
@@ -10,7 +10,7 @@ offset_left = 464.0
 offset_top = 250.0
 offset_right = 658.0
 offset_bottom = 386.0
-icon = ExtResource("1_exsrd")
-script = ExtResource("1_2wekl")
+icon = ExtResource("1_apkqr")
+script = ExtResource("2_apkqr")
 
 [node name="Timer" type="Timer" parent="Button" unique_id=1657692558]
