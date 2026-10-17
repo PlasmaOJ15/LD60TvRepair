@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 37.0
 
-[node name="dial" type="Area2D" unique_id=1945050643]
+[node name="dial" type="Node2D" unique_id=1828121356]
 script = ExtResource("1_wi0ro")
 
 [node name="aimProxy" type="Node2D" parent="." unique_id=496569497]
@@ -29,8 +29,10 @@ offset_bottom = 400000.25
 mouse_filter = 2
 color = Color(0.5069202, 0.5069202, 0.5069201, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020952954]
+[node name="Area2D" type="Area2D" parent="." unique_id=858122326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1020952954]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

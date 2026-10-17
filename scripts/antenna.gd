@@ -42,8 +42,8 @@ func _process(_delta: float) -> void:
 func getValue() -> int:
 	return currPos
 
-func _on_mouse_entered() -> void:
+func _on_area_2d_mouse_entered() -> void:
 	canClick = true
 
-func _on_mouse_exited() -> void:
+func _on_area_2d_mouse_exited() -> void:
 	canClick = false

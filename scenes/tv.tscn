@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bj1elcs2dijcd"]
 
+[ext_resource type="Script" uid="uid://cmxhhpu6rm6ft" path="res://scripts/tv.gd" id="1_lnbu4"]
 [ext_resource type="PackedScene" uid="uid://bk0g265hho5r4" path="res://scenes/dial.tscn" id="1_nqyhj"]
 [ext_resource type="PackedScene" uid="uid://dci3j7scbyxwu" path="res://scenes/antenna.tscn" id="2_0vvss"]
 
 [node name="TV" type="Node2D" unique_id=1870081773]
+script = ExtResource("1_lnbu4")
 
 [node name="assets" type="Node2D" parent="." unique_id=1084081004]
-position = Vector2(423, 344)
+position = Vector2(-184, -126)
 
 [node name="ColorRect" type="ColorRect" parent="assets" unique_id=1779990253]
 offset_right = 359.0
@@ -24,14 +26,14 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="dial" parent="." unique_id=1945050643 instance=ExtResource("1_nqyhj")]
-position = Vector2(468, 417)
+[node name="d1" parent="." unique_id=1945050643 instance=ExtResource("1_nqyhj")]
+position = Vector2(-139, -53)
 
-[node name="dial2" parent="." unique_id=1470588439 instance=ExtResource("1_nqyhj")]
-position = Vector2(468, 513)
+[node name="d2" parent="." unique_id=1470588439 instance=ExtResource("1_nqyhj")]
+position = Vector2(-139, 43)
 
-[node name="antenna" parent="." unique_id=791403272 instance=ExtResource("2_0vvss")]
-position = Vector2(520, 347)
+[node name="a1" parent="." unique_id=791403272 instance=ExtResource("2_0vvss")]
+position = Vector2(-87, -123)
 
-[node name="antenna2" parent="." unique_id=1726661583 instance=ExtResource("2_0vvss")]
-position = Vector2(671, 349)
+[node name="a2" parent="." unique_id=1726661583 instance=ExtResource("2_0vvss")]
+position = Vector2(64, -121)

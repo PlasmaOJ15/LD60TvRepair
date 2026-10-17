@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bvavbwdtlpjoj"]
+
+[ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
+[ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
+
+[node name="TVRepair" type="Node2D" unique_id=754929928]
+
+[node name="Logic" type="Node2D" parent="." unique_id=1714028281]
+script = ExtResource("1_l8d2w")
+debug = true
+
+[node name="debug" type="Node2D" parent="Logic" unique_id=1015605578]
+
+[node name="antennaL" type="ColorRect" parent="Logic/debug" unique_id=1993411561]
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 416.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="antennaR" type="ColorRect" parent="Logic/debug" unique_id=2055397605]
+offset_left = 752.0
+offset_top = 260.0
+offset_right = 792.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialD" type="ColorRect" parent="Logic/debug" unique_id=214206370]
+offset_left = 223.0
+offset_top = 519.0
+offset_right = 263.0
+offset_bottom = 559.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialU" type="ColorRect" parent="Logic/debug" unique_id=1371329366]
+offset_left = 223.0
+offset_top = 415.0
+offset_right = 263.0
+offset_bottom = 455.0
+color = Color(1, 0, 0, 1)
+
+[node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
+
+[node name="assets" type="Node2D" parent="Shelf" unique_id=1839037105]
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/assets" unique_id=1922070943]
+offset_top = 288.0
+offset_right = 1160.0
+offset_bottom = 328.0
+mouse_filter = 2
+color = Color(0.5513578, 0.55135787, 0.5513578, 1)
+
+[node name="Repair" type="Node2D" parent="." unique_id=553423842]
+
+[node name="TV" parent="Repair" unique_id=1870081773 instance=ExtResource("2_onf2w")]
+position = Vector2(580, 499)
