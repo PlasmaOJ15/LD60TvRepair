@@ -3,6 +3,7 @@ extends Node2D
 @export var dialVal := self.rotation_degrees
 
 @onready var assets: Node2D = $assets
+@onready var hand_sprite: AnimatedSprite2D = $assets/handSprite
 
 @onready var aim_proxy: Node2D = $aimProxy
 
@@ -29,6 +30,9 @@ func _process(_delta: float) -> void:
 				currPos += 360
 				aim_proxy.rotation_degrees += 360
 			assets.rotation_degrees = currPos * snapDivider
+			print(currPos)
+	else:
+		hand_sprite.visible = false
 	# click interaction
 	if Input.is_action_just_pressed("interact"):
 		if isActive:
@@ -36,11 +40,14 @@ func _process(_delta: float) -> void:
 			Global.mouseBusy = false
 		elif canClick:
 			isActive = true
+			hand_sprite.visible = true
 			Global.mouseBusy = true
 
 func getValue() -> int:
 	return currPos
-	
+
+func getIsActive():
+	return isActive
 
 func _on_area_2d_mouse_entered() -> void:
 	canClick = true

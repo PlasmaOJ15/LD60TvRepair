@@ -3,9 +3,77 @@
 [ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
+[ext_resource type="Script" uid="uid://h7w4wnncmpy4" path="res://scenes/tvStart.gd" id="3_liy50"]
 [ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
 [ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
+[ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
+[ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1152, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
+size = Vector2(1152, 318)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1ob"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lft"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y1sk"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph1ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y1sk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur2bf"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwfvr"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8178"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur2bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwfvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8178")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TVRepair" type="Node2D" unique_id=754929928]
 
@@ -55,7 +123,72 @@ offset_bottom = 328.0
 mouse_filter = 2
 color = Color(0.5513578, 0.55135787, 0.5513578, 1)
 
+[node name="TV1" type="Node2D" parent="Shelf" unique_id=408491865]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_liy50")
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV1" unique_id=1780182502]
+offset_right = 359.0
+offset_bottom = 247.0
+mouse_filter = 2
+color = Color(0.5069202, 0.5069202, 0.5069202, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Shelf/TV1" unique_id=1211076733]
+offset_left = 97.0
+offset_top = 18.0
+offset_right = 338.0
+offset_bottom = 226.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("5_6vb1h")]
+position = Vector2(-9, -46)
+scale = Vector2(0.4, 0.4)
+
+[node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_liy50")
+offset = 400
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV2" unique_id=1432048659]
+offset_right = 359.0
+offset_bottom = 247.0
+mouse_filter = 2
+color = Color(0.5069202, 0.5069202, 0.5069202, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Shelf/TV2" unique_id=194287761]
+offset_left = 97.0
+offset_top = 18.0
+offset_right = 338.0
+offset_bottom = 226.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Shelf/TV2" unique_id=963304027]
+offset_left = 106.0
+offset_top = 64.0
+offset_right = 1258.0
+offset_bottom = 710.0
+scale = Vector2(0.2, 0.2)
+script = ExtResource("5_ph1ob")
+
+[node name="SubViewport" type="SubViewport" parent="Shelf/TV2/SubViewportContainer" unique_id=2000141939]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 646)
+render_target_update_mode = 0
+
+[node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("6_liy50")]
+position = Vector2(584, 328)
+
 [node name="Repair" type="Node2D" parent="." unique_id=553423842]
+position = Vector2(0, 120)
 
 [node name="TV" parent="Repair" unique_id=1870081773 instance=ExtResource("2_onf2w")]
 position = Vector2(580, 499)
@@ -64,9 +197,40 @@ position = Vector2(580, 499)
 position = Vector2(580, 504)
 stream = ExtResource("4_cr3sw")
 
-[node name="ButtonGame" parent="." unique_id=306496527 instance=ExtResource("5_6vb1h")]
-scale = Vector2(0.4, 0.4)
+[node name="cameraMovement" type="Node2D" parent="." unique_id=1004633116]
+position = Vector2(576, 488)
+script = ExtResource("8_120fa")
 
-[node name="Node2D" parent="." unique_id=1874709638 instance=ExtResource("6_liy50")]
-position = Vector2(605, 174.99998)
-scale = Vector2(0.405, 0.405)
+[node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1000533642]
+position = Vector2(576, 227)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveDown" unique_id=408506770]
+position = Vector2(576, 487)
+shape = SubResource("RectangleShape2D_120fa")
+
+[node name="camera" type="Camera2D" parent="cameraMovement" unique_id=923564496]
+
+[node name="hands" type="Node2D" parent="." unique_id=1658747221]
+
+[node name="handL" type="AnimatedSprite2D" parent="hands" unique_id=459879618]
+position = Vector2(200.00002, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="handR" type="AnimatedSprite2D" parent="hands" unique_id=711839900]
+position = Vector2(950, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
+flip_h = true
+
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveUp" to="cameraMovement" method="_on_camera_move_up_mouse_entered"]
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveDown" to="cameraMovement" method="_on_camera_move_down_mouse_entered"]

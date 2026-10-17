@@ -4,6 +4,9 @@ extends Node2D
 
 var playing = false;
 	
+func _ready() -> void:
+	pass
+
 func startGame():
 	#reset balloon
 	playing = true;
