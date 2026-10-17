@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="LD60TvRepair"
+run/main_scene="uid://bb5od6v2hn7ju"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,12 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="Tv bounds"
+2d_physics/layer_2="Catcher"
+2d_physics/layer_3="Balloon"
 
 [physics]
 
