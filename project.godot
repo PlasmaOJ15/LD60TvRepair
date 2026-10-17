@@ -37,6 +37,7 @@ interact={
 2d_physics/layer_1="Tv bounds"
 2d_physics/layer_2="Catcher"
 2d_physics/layer_3="Balloon"
+2d_physics/layer_4="Balloon Lose Area"
 
 [physics]
 
