@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b3u4fch4cmeln"
-path="res://.godot/imported/TVStatic.mp3-5c2e4db147e7f9f530a55a004f72fc99.mp3str"
+path="res://.godot/imported/TVStatic.mp3-eaf08fbb713f08135e4fe752a496da72.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/TVStatic.mp3"
-dest_files=["res://.godot/imported/TVStatic.mp3-5c2e4db147e7f9f530a55a004f72fc99.mp3str"]
+source_file="res://assets/Audio/TVStatic.mp3"
+dest_files=["res://.godot/imported/TVStatic.mp3-eaf08fbb713f08135e4fe752a496da72.mp3str"]
 
 [params]
 
