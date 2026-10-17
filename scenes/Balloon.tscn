@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bb5od6v2hn7ju"]
 
 [ext_resource type="Script" uid="uid://ch67ya0y0r22o" path="res://scripts/catcherController.gd" id="1_1nhty"]
+[ext_resource type="Script" uid="uid://hisyeotivcuq" path="res://scripts/balloonGameManager.gd" id="1_6ukt2"]
 [ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_lmd8b"]
 [ext_resource type="Script" uid="uid://bvkpsv16spiuv" path="res://scripts/balloonController.gd" id="3_egdey"]
+[ext_resource type="Script" uid="uid://crs7r5m7yro15" path="res://scenes/loseArea.gd" id="4_3r1ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
 size = Vector2(160, 36)
@@ -10,15 +12,20 @@ size = Vector2(160, 36)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ym2wr"]
 radius = 15.132746
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1ia"]
+size = Vector2(1277, 172)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx17t"]
 size = Vector2(1147, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buomr"]
 size = Vector2(41, 622)
 
-[node name="Node2D" type="Node2D" unique_id=1874709638]
+[node name="BalloonGame" type="Node2D" unique_id=1874709638]
+script = ExtResource("1_6ukt2")
 
 [node name="Catcher" type="CharacterBody2D" parent="." unique_id=1792591579]
+position = Vector2(0, 65)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_1nhty")
@@ -33,7 +40,7 @@ position = Vector2(0, 148)
 shape = SubResource("RectangleShape2D_ym2wr")
 
 [node name="Balloon" type="CharacterBody2D" parent="." unique_id=1772982093]
-position = Vector2(-1, -116)
+position = Vector2(0, -180)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("3_egdey")
@@ -45,11 +52,27 @@ texture = ExtResource("1_lmd8b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon" unique_id=1374339118]
 shape = SubResource("CircleShape2D_ym2wr")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1999884121]
+position = Vector2(-40, 64)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("4_3r1ia")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D" unique_id=239464491]
+position = Vector2(45.5, 297)
+shape = SubResource("RectangleShape2D_3r1ia")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=75643258]
+position = Vector2(-40, 64)
 collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=467862167]
 position = Vector2(37, -375.5)
+scale = Vector2(8.96875, 0.2421875)
+texture = ExtResource("1_lmd8b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1937919861]
+position = Vector2(37, 240)
 scale = Vector2(8.96875, 0.2421875)
 texture = ExtResource("1_lmd8b")
 
@@ -76,4 +99,3 @@ position = Vector2(594, -66)
 shape = SubResource("RectangleShape2D_buomr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2035586943]
-position = Vector2(36, -69)
