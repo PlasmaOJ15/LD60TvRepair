@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bj1elcs2dijcd"]
+
+[ext_resource type="PackedScene" uid="uid://bk0g265hho5r4" path="res://scenes/dial.tscn" id="1_nqyhj"]
+
+[node name="TV" type="Node2D" unique_id=1870081773]
+
+[node name="assets" type="Node2D" parent="." unique_id=1084081004]
+position = Vector2(220, 151)
+
+[node name="ColorRect" type="ColorRect" parent="assets" unique_id=1779990253]
+offset_right = 359.0
+offset_bottom = 247.0
+mouse_filter = 2
+color = Color(0.5069202, 0.5069202, 0.5069202, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=1739588230]
+offset_left = 97.0
+offset_top = 18.0
+offset_right = 338.0
+offset_bottom = 226.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="dial" parent="." unique_id=1945050643 instance=ExtResource("1_nqyhj")]
+position = Vector2(265, 224)
+
+[node name="dial2" parent="." unique_id=1470588439 instance=ExtResource("1_nqyhj")]
+position = Vector2(265, 320)
