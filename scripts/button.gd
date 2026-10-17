@@ -9,15 +9,19 @@ var current_state: State = State.WAITING
 
 @onready var timer: Timer = $Timer
 
+var rng = RandomNumberGenerator.new()
 
 # checks for timer node before starting
 func _ready() -> void:
+	rng.randomize()
 	pressed.connect(_on_pressed)
 	
 	if not timer:
 		printerr("ERROR: A Timer child node named 'Timer' isn't there :(")
 		return
 		
+	time_to_wait = rng.randi_range(10,20)
+	
 	timer.one_shot = true
 	if not timer.timeout.is_connected(_on_timer_timeout):
 		timer.timeout.connect(_on_timer_timeout)
@@ -25,8 +29,9 @@ func _ready() -> void:
 
 # checks the time for debuging puropses
 func _process(_delta: float) -> void:
-	if not timer.is_stopped():
-		print("Timer State: ", State.keys()[current_state], " | Timer Time Left: ", snappedf(timer.time_left, 0.1), "s")
+	pass
+	#if not timer.is_stopped():
+	#	print("Timer State: ", State.keys()[current_state], " | Timer Time Left: ", snappedf(timer.time_left, 0.1), "s")
 
 
 # button is waiting to be able to click
@@ -44,6 +49,7 @@ func start_active() -> void:
 	disabled = false                       
 	modulate = Color.WHITE                 
 	timer.wait_time = active_duration
+	print("CLICK THE BUTTON")
 	timer.start()
 
 

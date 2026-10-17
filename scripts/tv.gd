@@ -26,10 +26,10 @@ func disable():
 	a_2.isActive = false
 
 func getLeftIsActive():
-	return d_1.getIsActive() or d_2.getIsActive() or a_1.getIsActive()
+	return a_1.getIsActive()
 
 func getRightIsActive():
-	return a_2.getIsActive()
+	return d_1.getIsActive() or d_2.getIsActive() or a_2.getIsActive()
 
 func getValue(item: int) -> int:
 	if item == 0 :

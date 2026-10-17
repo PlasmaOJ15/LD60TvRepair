@@ -39,6 +39,9 @@ func EndGame():
 	color_rect.visible = true;
 	color_rect.color = Color(1.0, 1.0, 1.0, 1.0);
 
+func startGame():
+	ResetGame()
+
 func ResetGame():
 	RandomizeTimeUntilNextPattern();
 	color_rect.visible = true;

@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
 [ext_resource type="Script" uid="uid://h7w4wnncmpy4" path="res://scenes/tvStart.gd" id="3_liy50"]
+[ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="4_6y1sk"]
 [ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
 [ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
 [ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
+[ext_resource type="Texture2D" uid="uid://dhirxaiwpcv87" path="res://assets/tvOverlay.png" id="6_k8178"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
+[ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
 [ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
 
@@ -98,16 +101,16 @@ offset_bottom = 300.0
 color = Color(1, 0, 0, 1)
 
 [node name="dialD" type="ColorRect" parent="Logic/debug" unique_id=214206370]
-offset_left = 223.0
+offset_left = 887.0
 offset_top = 519.0
-offset_right = 263.0
+offset_right = 927.0
 offset_bottom = 559.0
 color = Color(1, 0, 0, 1)
 
 [node name="dialU" type="ColorRect" parent="Logic/debug" unique_id=1371329366]
-offset_left = 223.0
+offset_left = 887.0
 offset_top = 415.0
-offset_right = 263.0
+offset_right = 927.0
 offset_bottom = 455.0
 color = Color(1, 0, 0, 1)
 
@@ -129,25 +132,17 @@ visible = false
 position = Vector2(1209, 46)
 script = ExtResource("3_liy50")
 
-[node name="ColorRect" type="ColorRect" parent="Shelf/TV1" unique_id=1780182502]
-offset_right = 359.0
-offset_bottom = 247.0
-mouse_filter = 2
-color = Color(0.5069202, 0.5069202, 0.5069202, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="Shelf/TV1" unique_id=1211076733]
-offset_left = 97.0
-offset_top = 18.0
-offset_right = 338.0
-offset_bottom = 226.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
 
 [node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("5_6vb1h")]
-position = Vector2(-9, -46)
+position = Vector2(-85.99999, -61)
 scale = Vector2(0.4, 0.4)
+
+[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV1" unique_id=718706271]
+position = Vector2(179, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("6_k8178")
 
 [node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
 visible = false
@@ -155,27 +150,14 @@ position = Vector2(1209, 46)
 script = ExtResource("3_liy50")
 offset = 400
 
-[node name="ColorRect" type="ColorRect" parent="Shelf/TV2" unique_id=1432048659]
-offset_right = 359.0
-offset_bottom = 247.0
-mouse_filter = 2
-color = Color(0.5069202, 0.5069202, 0.5069202, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="Shelf/TV2" unique_id=194287761]
-offset_left = 97.0
-offset_top = 18.0
-offset_right = 338.0
-offset_bottom = 226.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Shelf/TV2" unique_id=963304027]
-offset_left = 106.0
-offset_top = 64.0
-offset_right = 1258.0
-offset_bottom = 710.0
+offset_left = 25.000008
+offset_top = 27.000002
+offset_right = 1177.0
+offset_bottom = 673.0
 scale = Vector2(0.2, 0.2)
 script = ExtResource("5_ph1ob")
 
@@ -187,6 +169,29 @@ render_target_update_mode = 0
 
 [node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("6_liy50")]
 position = Vector2(584, 328)
+
+[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV2" unique_id=1982266096]
+position = Vector2(179, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("6_k8178")
+
+[node name="TV3" type="Node2D" parent="Shelf" unique_id=1083899338]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_liy50")
+offset = 800
+
+[node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
+
+[node name="SimonSays" parent="Shelf/TV3" unique_id=1031054397 instance=ExtResource("7_h3lft")]
+position = Vector2(141, 81)
+scale = Vector2(0.215, 0.215)
+
+[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV3" unique_id=2062490692]
+position = Vector2(179, 55)
+scale = Vector2(3, 3)
+texture = ExtResource("6_k8178")
 
 [node name="Repair" type="Node2D" parent="." unique_id=553423842]
 position = Vector2(0, 120)

@@ -102,6 +102,7 @@ func _process(delta: float) -> void:
 			tv = newTV
 			repair.add_child(newTV)
 			randomizeVals()
+			Global.mouseBusy = false
 			active = true
 			enteringFrame = true
 		else:

@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 		if isActive:
 			isActive = false
 			Global.mouseBusy = false
-		elif canClick:
+		elif canClick and not Global.mouseBusy:
 			isActive = true
 			hand_sprite.visible = true
 			Global.mouseBusy = true

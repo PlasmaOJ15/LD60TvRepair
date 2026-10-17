@@ -3,6 +3,7 @@ extends Node2D
 var tvsActive = 0
 @onready var tv_1: Node2D = $TV1
 @onready var tv_2: Node2D = $TV2
+@onready var tv_3: Node2D = $TV3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,10 @@ func activateTV(num: int):
 		tv_2.visible = true
 		tv_2.enterFrame()
 		tv_2.startGame()
+	if num == 3:
+		tv_3.visible = true
+		tv_3.enterFrame()
+		tv_3.startGame()
 		
 func addTV():
 	tvsActive += 1
