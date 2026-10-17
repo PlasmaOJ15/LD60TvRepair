@@ -6,15 +6,14 @@ extends Node2D
 @onready var a_2: Node2D = $a2
 @onready var player_sprite: AnimatedSprite2D = $assets/PlayerSprite
 
+var animInt = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func playAnim(animInt):
-	if animInt == 0:
-		player_sprite.play("default")
-	elif animInt == 1:
-		player_sprite.play("lookUp")
+	self.animInt = animInt
+	player_sprite.play("transition")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -42,3 +41,11 @@ func getValue(item: int) -> int:
 	elif item == 3 :
 		return d_2.getValue()
 	return -1
+
+
+func _on_player_sprite_animation_finished() -> void:
+	if player_sprite.animation == "transition":
+		if animInt == 0:
+			player_sprite.play("default")
+		elif animInt == 1:
+			player_sprite.play("lookUp")

@@ -19,15 +19,15 @@ size = Vector2(1152, 318)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ph1ob"]
 atlas = ExtResource("9_g0bpt")
-region = Rect2(0, 128, 64, 64)
+region = Rect2(128, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3lft"]
 atlas = ExtResource("9_g0bpt")
-region = Rect2(64, 128, 64, 64)
+region = Rect2(192, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y1sk"]
 atlas = ExtResource("9_g0bpt")
-region = Rect2(128, 128, 64, 64)
+region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -46,29 +46,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8178"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(128, 64, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur2bf"]
 atlas = ExtResource("9_g0bpt")
-region = Rect2(64, 128, 64, 64)
+region = Rect2(192, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwfvr"]
 atlas = ExtResource("9_g0bpt")
-region = Rect2(128, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8178"]
-atlas = ExtResource("9_g0bpt")
 region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8178"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8178")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ur2bf")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iwfvr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8178")
 }],
 "loop": 1,
 "name": &"default",
@@ -112,6 +112,7 @@ offset_bottom = 455.0
 color = Color(1, 0, 0, 1)
 
 [node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
+position = Vector2(0, -88)
 script = ExtResource("2_p04im")
 
 [node name="assets" type="Node2D" parent="Shelf" unique_id=1839037105]
@@ -205,14 +206,14 @@ script = ExtResource("8_120fa")
 position = Vector2(-576, -488)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1000533642]
-position = Vector2(576, 227)
+position = Vector2(576, 163)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
 position = Vector2(-576, -488)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveDown" unique_id=408506770]
-position = Vector2(576, 487)
+position = Vector2(576, 431)
 shape = SubResource("RectangleShape2D_120fa")
 
 [node name="camera" type="Camera2D" parent="cameraMovement" unique_id=923564496]
@@ -228,7 +229,7 @@ autoplay = "default"
 [node name="handR" type="AnimatedSprite2D" parent="hands" unique_id=711839900]
 position = Vector2(950, 682)
 scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_yf5fn")
+sprite_frames = SubResource("SpriteFrames_k8178")
 autoplay = "default"
 flip_h = true
 

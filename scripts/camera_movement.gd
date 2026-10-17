@@ -8,7 +8,7 @@ extends Node2D
 
 var currUp = false
 
-var camPosUp = Vector2(0,-164)
+var camPosUp = Vector2(0,-200)
 var camPosDown = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
