@@ -21,8 +21,6 @@ func _ready() -> void:
 	timer.one_shot = true
 	if not timer.timeout.is_connected(_on_timer_timeout):
 		timer.timeout.connect(_on_timer_timeout)
-		
-	start_waiting()
 
 
 # checks the time for debuging puropses

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_lmd8b"]
 [ext_resource type="Script" uid="uid://bvkpsv16spiuv" path="res://scripts/balloonController.gd" id="3_egdey"]
 [ext_resource type="Script" uid="uid://crs7r5m7yro15" path="res://scenes/loseArea.gd" id="4_3r1ia"]
-[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://Assets/Audio/BalloonBounce.wav" id="5_opmx1"]
+[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://assets/Audio/BalloonBounce.wav" id="5_opmx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
 size = Vector2(160, 36)
@@ -44,6 +44,7 @@ shape = SubResource("RectangleShape2D_ym2wr")
 position = Vector2(0, -180)
 collision_layer = 4
 collision_mask = 3
+slide_on_ceiling = false
 script = ExtResource("3_egdey")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon" unique_id=1422636263]
@@ -101,8 +102,6 @@ shape = SubResource("RectangleShape2D_buomr")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=1937177772]
 position = Vector2(594, -66)
 shape = SubResource("RectangleShape2D_buomr")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2035586943]
 
 [connection signal="area_entered" from="LoseArea" to="LoseArea" method="_on_area_entered"]
 [connection signal="body_entered" from="LoseArea" to="LoseArea" method="_on_body_entered"]

@@ -1,9 +1,39 @@
 [gd_scene format=3 uid="uid://dci3j7scbyxwu"]
 
 [ext_resource type="Script" uid="uid://loye2gyhjvf1" path="res://scripts/antenna.gd" id="1_cymb1"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="2_dwh18"]
 [ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_lyb31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cymb1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3nv8"]
+atlas = ExtResource("2_dwh18")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spr5x"]
+atlas = ExtResource("2_dwh18")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tewd3"]
+atlas = ExtResource("2_dwh18")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3nv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spr5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tewd3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="antenna" type="Node2D" unique_id=702266822]
 script = ExtResource("1_cymb1")
@@ -31,6 +61,14 @@ position = Vector2(160, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assets/Area2D" unique_id=1451270202]
 shape = SubResource("RectangleShape2D_cymb1")
+
+[node name="handSprite" type="AnimatedSprite2D" parent="assets" unique_id=2008561727]
+visible = false
+position = Vector2(165, 2)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
 
 [node name="aimProxy" type="Node2D" parent="." unique_id=1937303953]
 

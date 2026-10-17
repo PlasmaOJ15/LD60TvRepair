@@ -2,6 +2,36 @@
 
 [ext_resource type="Script" uid="uid://bdisp3ctcbhbp" path="res://scripts/dial.gd" id="1_wi0ro"]
 [ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="2_8jcdt"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="2_730i4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ovxx"]
+atlas = ExtResource("2_730i4")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utw6n"]
+atlas = ExtResource("2_730i4")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1x1o"]
+atlas = ExtResource("2_730i4")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ovxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utw6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1x1o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 37.0
@@ -12,23 +42,29 @@ script = ExtResource("1_wi0ro")
 [node name="aimProxy" type="Node2D" parent="." unique_id=496569497]
 
 [node name="assets" type="Node2D" parent="." unique_id=76200230]
-scale = Vector2(1e-05, 1e-05)
 
-[node name="ColorRect1" type="ColorRect" parent="assets" unique_id=999658332]
-offset_left = -2600000.2
-offset_top = -2600000.0
-offset_right = 2600000.7
-offset_bottom = 2600000.5
+[node name="ColorRect" type="ColorRect" parent="assets" unique_id=876782641]
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 26.0
+offset_bottom = 26.0
 mouse_filter = 2
-color = Color(0.4228827, 0.42288283, 0.42288265, 1)
+color = Color(0.41981313, 0.41981313, 0.4198131, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=113531556]
-offset_left = -399999.75
-offset_top = -399999.75
-offset_right = 2600000.7
-offset_bottom = 400000.25
+[node name="ColorRect2" type="ColorRect" parent="assets" unique_id=477370921]
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 26.0
+offset_bottom = 6.0
 mouse_filter = 2
-color = Color(0.5069202, 0.5069202, 0.5069201, 1)
+color = Color(0.9088109, 0.9088109, 0.9088109, 1)
+
+[node name="handSprite" type="AnimatedSprite2D" parent="assets" unique_id=192872126]
+visible = false
+position = Vector2(8, -8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858122326]
 

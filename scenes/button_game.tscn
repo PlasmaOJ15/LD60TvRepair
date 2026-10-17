@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b85km7tmsqm5h"]
 
 [ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_apkqr"]
+[ext_resource type="Script" uid="uid://bu1s70ab0f8e" path="res://scripts/button_game.gd" id="1_bnp38"]
 [ext_resource type="Script" uid="uid://bew56xncjsbq2" path="res://scripts/button.gd" id="2_apkqr"]
 
 [node name="ButtonGame" type="Node2D" unique_id=306496527]
+script = ExtResource("1_bnp38")
 
 [node name="Button" type="Button" parent="." unique_id=951741531]
 offset_left = 464.0
