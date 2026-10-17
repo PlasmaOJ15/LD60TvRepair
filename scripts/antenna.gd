@@ -32,12 +32,12 @@ func _process(_delta: float) -> void:
 			assets.rotation_degrees = (currPos+18) * snapDivider
 	# click interaction
 	if Input.is_action_just_pressed("interact"):
-		if canClick:
-			isActive = true
-			Global.mouseBusy = true
-		elif isActive:
+		if isActive:
 			isActive = false
 			Global.mouseBusy = false
+		elif canClick:
+			isActive = true
+			Global.mouseBusy = true
 
 func getValue() -> int:
 	return currPos
