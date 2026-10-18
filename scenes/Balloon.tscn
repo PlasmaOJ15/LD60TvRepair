@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://ch67ya0y0r22o" path="res://scripts/catcherController.gd" id="1_1nhty"]
 [ext_resource type="Script" uid="uid://hisyeotivcuq" path="res://scripts/balloonGameManager.gd" id="1_6ukt2"]
 [ext_resource type="Script" uid="uid://bvkpsv16spiuv" path="res://scripts/balloonController.gd" id="3_egdey"]
-[ext_resource type="Texture2D" uid="uid://dk3smay5btkb5" path="res://Assets/Trampoline.png" id="3_g7uyc"]
+[ext_resource type="Texture2D" uid="uid://dk3smay5btkb5" path="res://assets/Trampoline.png" id="3_g7uyc"]
 [ext_resource type="Script" uid="uid://crs7r5m7yro15" path="res://scenes/loseArea.gd" id="4_3r1ia"]
-[ext_resource type="Texture2D" uid="uid://0qsiouiglv1v" path="res://Assets/Balloon2.png" id="5_g7uyc"]
-[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://Assets/Audio/BalloonBounce.wav" id="5_opmx1"]
-[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://Assets/Audio/failed (1).wav" id="7_7gbql"]
-[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://Assets/Audio/failed (2).wav" id="8_g7uyc"]
-[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://Assets/Audio/failed (3).wav" id="9_a5gnl"]
+[ext_resource type="AudioStream" uid="uid://c8lpj1a2u1jdo" path="res://assets/Audio/sineWav.wav" id="4_a5gnl"]
+[ext_resource type="Texture2D" uid="uid://0qsiouiglv1v" path="res://assets/Balloon2.png" id="5_g7uyc"]
+[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://assets/Audio/BalloonBounce.wav" id="5_opmx1"]
+[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_7gbql"]
+[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_g7uyc"]
+[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_a5gnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
 size = Vector2(218, 82)
@@ -42,7 +43,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -583.0
-offset_top = -326.0
+offset_top = -801.0
 offset_right = 583.0
 offset_bottom = 326.0
 grow_horizontal = 2
@@ -78,7 +79,7 @@ texture = ExtResource("5_g7uyc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon" unique_id=1374339118]
 shape = SubResource("CircleShape2D_ym2wr")
 
-[node name="BounceSFX" type="AudioStreamPlayer2D" parent="Balloon" unique_id=45057524]
+[node name="BounceSFX" type="AudioStreamPlayer" parent="Balloon" unique_id=843737232]
 stream = ExtResource("5_opmx1")
 
 [node name="LoseArea" type="Area2D" parent="." unique_id=1999884121]
@@ -107,9 +108,12 @@ shape = SubResource("RectangleShape2D_buomr")
 position = Vector2(637, -424)
 shape = SubResource("RectangleShape2D_buomr")
 
-[node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1428905131]
+[node name="gameOver" type="AudioStreamPlayer" parent="." unique_id=27250334]
 stream = SubResource("AudioStreamRandomizer_le8d2")
 volume_db = 10.0
+
+[node name="fallSound" type="AudioStreamPlayer" parent="." unique_id=1236299112]
+stream = ExtResource("4_a5gnl")
 
 [connection signal="area_entered" from="LoseArea" to="LoseArea" method="_on_area_entered"]
 [connection signal="body_entered" from="LoseArea" to="LoseArea" method="_on_body_entered"]

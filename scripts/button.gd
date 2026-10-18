@@ -68,6 +68,8 @@ func start_active() -> void:
 func start_failed() -> void:
 	gameOver.emit()
 	game_over.play()
+	button_sprites.play("pressLoop")
+	text_sprites.play("default")
 	current_state = State.FAILED
 	disabled = false                       
 	modulate = Color.RED                   

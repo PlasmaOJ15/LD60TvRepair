@@ -5,16 +5,16 @@
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
 [ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="3_iwfvr"]
 [ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="4_6y1sk"]
-[ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://Assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
+[ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
 [ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
 [ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
 [ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
-[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://Assets/PlayerSpritesheet.png" id="9_g0bpt"]
-[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://Assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
-[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://Assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
-[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://Assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_g4v7s"]
 stream_count = 3
@@ -143,12 +143,19 @@ visible = false
 position = Vector2(1209, 46)
 script = ExtResource("3_iwfvr")
 
-[node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("4_6y1sk")]
-position = Vector2(179, 55)
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV1" unique_id=1567407690]
+offset_left = 15.0
+offset_top = -29.0
+offset_right = 285.0
+offset_bottom = 204.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
 
 [node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("5_6vb1h")]
 position = Vector2(-46, -19)
 scale = Vector2(0.333, 0.333)
+
+[node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
 
 [node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
 visible = false
@@ -156,25 +163,33 @@ position = Vector2(1209, 46)
 script = ExtResource("3_iwfvr")
 offset = 400
 
-[node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("4_6y1sk")]
-position = Vector2(179, 55)
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV2" unique_id=537746979]
+offset_left = 15.0
+offset_top = -28.0
+offset_right = 285.0
+offset_bottom = 205.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Shelf/TV2" unique_id=963304027]
-offset_left = 25.000008
-offset_top = 27.000002
-offset_right = 1177.0
-offset_bottom = 673.0
-scale = Vector2(0.2, 0.2)
+offset_left = 17.0
+offset_top = -31.0
+offset_right = 1169.0
+offset_bottom = 1130.9048
+scale = Vector2(0.21, 0.21)
 script = ExtResource("5_ph1ob")
 
 [node name="SubViewport" type="SubViewport" parent="Shelf/TV2/SubViewportContainer" unique_id=2000141939]
 disable_3d = true
 handle_input_locally = false
-size = Vector2i(1152, 646)
+size = Vector2i(1152, 1142)
 render_target_update_mode = 0
 
 [node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("6_liy50")]
-position = Vector2(584, 328)
+position = Vector2(584, 800)
+
+[node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 54.999996)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TV3" type="Node2D" parent="Shelf" unique_id=1083899338]
 visible = false
@@ -182,12 +197,19 @@ position = Vector2(1209, 46)
 script = ExtResource("3_iwfvr")
 offset = 800
 
-[node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("4_6y1sk")]
-position = Vector2(179, 55)
+[node name="ColorRect2" type="ColorRect" parent="Shelf/TV3" unique_id=365708726]
+offset_left = 15.0
+offset_top = -28.0
+offset_right = 285.0
+offset_bottom = 205.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
 
 [node name="SimonSays" parent="Shelf/TV3" unique_id=1031054397 instance=ExtResource("7_h3lft")]
 position = Vector2(141, 81)
 scale = Vector2(0.215, 0.215)
+
+[node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
 
 [node name="music" type="AudioStreamPlayer" parent="Shelf" unique_id=1843814436]
 stream = SubResource("AudioStreamSynchronized_g4v7s")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfq05hc0k8mrs"
-path="res://.godot/imported/antenna.png-9436fa3435bc23b83c94393002e7acdf.ctex"
+path="res://.godot/imported/antenna.png-c76cfd8e28d958ef50800a0cf1c957fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/antenna.png"
-dest_files=["res://.godot/imported/antenna.png-9436fa3435bc23b83c94393002e7acdf.ctex"]
+source_file="res://assets/antenna.png"
+dest_files=["res://.godot/imported/antenna.png-c76cfd8e28d958ef50800a0cf1c957fc.ctex"]
 
 [params]
 
