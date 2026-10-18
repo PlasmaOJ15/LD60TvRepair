@@ -91,9 +91,11 @@ one_shot = true
 
 [node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=1962923899]
 stream = SubResource("AudioStreamRandomizer_g4v7s")
+volume_db = 10.0
 
 [node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1730577686]
 stream = SubResource("AudioStreamRandomizer_opmx1")
+volume_db = 10.0
 
 [connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Red" to="." method="_on_red_pressed"]

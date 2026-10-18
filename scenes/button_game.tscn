@@ -37,8 +37,10 @@ script = ExtResource("2_apkqr")
 
 [node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=2023909212]
 stream = SubResource("AudioStreamRandomizer_ju4nd")
+volume_db = 10.0
 
 [node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=407784988]
 stream = SubResource("AudioStreamRandomizer_lpjg5")
+volume_db = 10.0
 
 [connection signal="gameOver" from="Button" to="." method="_on_button_game_over"]

@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 	pass
 
 func activateTV():
+	print(tvsActive-1)
+	music.stream.set_sync_stream_volume(tvsActive-1, 0.0)
 	currTV.visible = true
 	currTV.enterFrame()
 	currTV.startGame()
@@ -45,7 +47,8 @@ func addTV():
 		print("added TV")
 
 func removeTV(tvVal: int):
-	music.stream.set_sync_stream_volume(tvsActive-1, -100.0)
+	tvsActive -= 1
+	music.stream.set_sync_stream_volume(tvsActive, -100.0)
 	for i in range(tvPositions.size()):
 		if i != tvVal and tvList[i].active:
 			print(tvList[i].name + " is active!")

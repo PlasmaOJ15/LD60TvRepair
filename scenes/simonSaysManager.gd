@@ -72,6 +72,7 @@ func ShowPattern():
 	
 	#show pattern
 	for i in patternLength:
+		game_ready.play()
 		flash_color_timer.start();
 		ShowColor(colorPatterns[i]);
 		#wait until timer is done
@@ -105,7 +106,6 @@ func CheckPattern():
 	#if button pressed, check if button = next in pattern
 	
 	for i in patternLength:
-	
 		var button = await signal_group.any(signals)
 		match button.name:
 			"Green":
@@ -119,6 +119,7 @@ func CheckPattern():
 			correct = true
 		else:
 			correct = false
+			gameOver.emit()
 			EndGame();
 			break
 			
@@ -137,7 +138,6 @@ func _on_enter_pattern_timer_timeout() -> void:
 
 
 func _on_time_until_next_pattern_timeout() -> void:
-	game_ready.play()
 	ShowPattern();
 	pass
 	

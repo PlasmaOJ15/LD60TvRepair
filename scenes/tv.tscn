@@ -152,6 +152,7 @@ flippedHand = true
 
 [node name="staticAudio" type="AudioStreamPlayer2D" parent="." unique_id=595890825]
 stream = SubResource("AudioStreamMP3_4knv4")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="animation_finished" from="assets/PlayerSprite" to="." method="_on_player_sprite_animation_finished"]
