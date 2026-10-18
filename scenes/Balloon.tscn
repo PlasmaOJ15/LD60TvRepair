@@ -2,28 +2,29 @@
 
 [ext_resource type="Script" uid="uid://ch67ya0y0r22o" path="res://scripts/catcherController.gd" id="1_1nhty"]
 [ext_resource type="Script" uid="uid://hisyeotivcuq" path="res://scripts/balloonGameManager.gd" id="1_6ukt2"]
-[ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_lmd8b"]
 [ext_resource type="Script" uid="uid://bvkpsv16spiuv" path="res://scripts/balloonController.gd" id="3_egdey"]
+[ext_resource type="Texture2D" uid="uid://dk3smay5btkb5" path="res://Assets/Trampoline.png" id="3_g7uyc"]
 [ext_resource type="Script" uid="uid://crs7r5m7yro15" path="res://scenes/loseArea.gd" id="4_3r1ia"]
-[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://assets/Audio/BalloonBounce.wav" id="5_opmx1"]
-[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_7gbql"]
-[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_g7uyc"]
-[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_a5gnl"]
+[ext_resource type="Texture2D" uid="uid://0qsiouiglv1v" path="res://Assets/Balloon2.png" id="5_g7uyc"]
+[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://Assets/Audio/BalloonBounce.wav" id="5_opmx1"]
+[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://Assets/Audio/failed (1).wav" id="7_7gbql"]
+[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://Assets/Audio/failed (2).wav" id="8_g7uyc"]
+[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://Assets/Audio/failed (3).wav" id="9_a5gnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
-size = Vector2(160, 36)
+size = Vector2(218, 82)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ym2wr"]
-radius = 15.132746
+radius = 37.01351
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1ia"]
-size = Vector2(1277, 158)
+size = Vector2(1277, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx17t"]
-size = Vector2(1147, 20)
+size = Vector2(1260, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buomr"]
-size = Vector2(41, 622)
+size = Vector2(73, 1465.5)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_le8d2"]
 streams_count = 3
@@ -34,31 +35,45 @@ stream_2/stream = ExtResource("9_a5gnl")
 [node name="BalloonGame" type="Node2D" unique_id=1874709638]
 script = ExtResource("1_6ukt2")
 
+[node name="Background" type="ColorRect" parent="." unique_id=680266646]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -583.0
+offset_top = -326.0
+offset_right = 583.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35063845, 0.4378314, 0.3771816, 1)
+
 [node name="Catcher" type="CharacterBody2D" parent="." unique_id=1792591579]
-position = Vector2(0, 65)
+position = Vector2(0, 87.165)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_1nhty")
 
 [node name="Sprite2D" type="Sprite2D" parent="Catcher" unique_id=2114454312]
-position = Vector2(0, 148)
-scale = Vector2(1.25, 0.28125)
-texture = ExtResource("1_lmd8b")
+position = Vector2(0, 143.43199)
+scale = Vector2(8, 8)
+texture = ExtResource("3_g7uyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catcher" unique_id=2066301706]
-position = Vector2(0, 148)
+position = Vector2(1, 160.605)
 shape = SubResource("RectangleShape2D_ym2wr")
 
 [node name="Balloon" type="CharacterBody2D" parent="." unique_id=1772982093]
-position = Vector2(0, -180)
+position = Vector2(0, -270)
 collision_layer = 4
 collision_mask = 3
 slide_on_ceiling = false
 script = ExtResource("3_egdey")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon" unique_id=1422636263]
-scale = Vector2(0.234375, 0.234375)
-texture = ExtResource("1_lmd8b")
+scale = Vector2(5.989, 5.989)
+texture = ExtResource("5_g7uyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon" unique_id=1374339118]
 shape = SubResource("CircleShape2D_ym2wr")
@@ -73,43 +88,23 @@ collision_mask = 4
 script = ExtResource("4_3r1ia")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="LoseArea" unique_id=239464491]
-position = Vector2(45.5, 304)
+position = Vector2(45.5, 318)
 shape = SubResource("RectangleShape2D_3r1ia")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=75643258]
 position = Vector2(-40, 64)
 collision_mask = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Walls" unique_id=467862167]
-position = Vector2(37, -375.5)
-scale = Vector2(8.96875, 0.2421875)
-texture = ExtResource("1_lmd8b")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Walls" unique_id=1937919861]
-position = Vector2(37, 240)
-scale = Vector2(8.96875, 0.2421875)
-texture = ExtResource("1_lmd8b")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Walls" unique_id=1684553685]
-position = Vector2(-518.75, -69.625)
-scale = Vector2(0.37109366, 5.0253906)
-texture = ExtResource("1_lmd8b")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Walls" unique_id=130853881]
-position = Vector2(589, -66)
-scale = Vector2(0.37109366, 5.0253906)
-texture = ExtResource("1_lmd8b")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=993843659]
-position = Vector2(40, -372)
+position = Vector2(46, -1079)
 shape = SubResource("RectangleShape2D_xx17t")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=903377865]
-position = Vector2(-516.5, -66)
+position = Vector2(-573.5, -434.25)
 shape = SubResource("RectangleShape2D_buomr")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=1937177772]
-position = Vector2(594, -66)
+position = Vector2(637, -424)
 shape = SubResource("RectangleShape2D_buomr")
 
 [node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1428905131]
