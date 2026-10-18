@@ -114,6 +114,7 @@ volume_db = 10.0
 
 [node name="fallSound" type="AudioStreamPlayer" parent="." unique_id=1236299112]
 stream = ExtResource("4_a5gnl")
+volume_db = -5.0
 
 [connection signal="area_entered" from="LoseArea" to="LoseArea" method="_on_area_entered"]
 [connection signal="body_entered" from="LoseArea" to="LoseArea" method="_on_body_entered"]

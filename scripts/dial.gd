@@ -8,6 +8,9 @@ extends Node2D
 @onready var aim_proxy: Node2D = $aimProxy
 
 @onready var dial_tick: AudioStreamPlayer2D = $dialTick
+@onready var dial_correct: AudioStreamPlayer2D = $dialCorrect
+
+signal setToCorrect(value: bool)
 
 # are you hovering over the dial
 var canClick := false
@@ -18,18 +21,27 @@ var currPos := 0
 
 var snapDivider := 20
 
+var correctVal := -1
+
 func _process(_delta: float) -> void:
 	if isActive:
 		# Look at the mouse and do some wacky math, returning a value of
 		# 0 - 18
 		aim_proxy.look_at(get_global_mouse_position())
 		if (int(aim_proxy.rotation_degrees) % 360)/snapDivider != currPos:
-			dial_tick.play()
+			
 			currPos = (int(aim_proxy.rotation_degrees) % 360)/snapDivider
 			if (currPos < 0):
 				currPos += 360
 				aim_proxy.rotation_degrees += 360
 			assets.rotation_degrees = currPos * snapDivider
+			
+			if currPos == correctVal:
+				dial_correct.play()
+				setToCorrect.emit(true)
+			else:
+				dial_tick.play()
+				setToCorrect.emit(false)
 	else:
 		hand_sprite.visible = false
 	# click interaction
@@ -41,6 +53,9 @@ func _process(_delta: float) -> void:
 			isActive = true
 			hand_sprite.visible = true
 			Global.mouseBusy = true
+
+func setVal(val):
+	correctVal = val
 
 func getValue() -> int:
 	return currPos

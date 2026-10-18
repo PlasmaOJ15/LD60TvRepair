@@ -21,9 +21,6 @@ func _ready() -> void:
 	music.stream.set_sync_stream_volume(2, -100.0)
 	music.play()
 
-func _process(delta: float) -> void:
-	pass
-
 func activateTV():
 	print(tvsActive-1)
 	music.stream.set_sync_stream_volume(tvsActive-1, 0.0)

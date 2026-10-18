@@ -10,6 +10,7 @@ extends Node2D
 
 var animInt = 0
 
+signal setDial(which: int, value: bool)
 
 func playAnim(animIntA):
 	animInt = animIntA
@@ -42,9 +43,37 @@ func staticDisable():
 	staticAsset.visible = false
 	static_audio.stop()
 
+func setVals(a1, a2, d1, d2):
+	a_1.setVal(a1)
+	a_2.setVal(a2)
+	d_1.setVal(d1)
+	d_2.setVal(d2)
+
+func staticDecrease():
+	static_audio.volume_db -= 4
+	
+func staticIncrease():
+	static_audio.volume_db += 4
+
 func _on_player_sprite_animation_finished() -> void:
 	if player_sprite.animation == "transition":
 		if animInt == 0:
 			player_sprite.play("default")
 		elif animInt == 1:
 			player_sprite.play("lookUp")
+
+
+func _on_d_1_set_to_correct(value: bool) -> void:
+	setDial.emit(2, value)
+
+
+func _on_d_2_set_to_correct(value: bool) -> void:
+	setDial.emit(3, value)
+
+
+func _on_a_1_set_to_correct(value: bool) -> void:
+	setDial.emit(0, value)
+
+
+func _on_a_2_set_to_correct(value: bool) -> void:
+	setDial.emit(1, value)
