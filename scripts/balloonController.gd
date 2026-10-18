@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var bounce_sfx: AudioStreamPlayer2D = $BounceSFX
 
 const SPEED = 300.0
-const BOUNCE_SPEED = 70
-var GRAVITY_MULT = .07;
+const BOUNCE_SPEED = 90
+var GRAVITY_MULT = .03;
 var random = RandomNumberGenerator.new()
 var maxVelocity = 100.0;
 

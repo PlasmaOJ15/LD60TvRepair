@@ -16,7 +16,7 @@ func startGame():
 	playing = true;
 	catcher.position.x = 0.0;
 	catcher.position.y = 65.0;
-	balloon.position.x = -180.0;
+	balloon.position.x = -270.0;
 	balloon.position.y = 0;
 	
 func endGame():
