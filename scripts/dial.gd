@@ -30,7 +30,6 @@ func _process(_delta: float) -> void:
 				currPos += 360
 				aim_proxy.rotation_degrees += 360
 			assets.rotation_degrees = currPos * snapDivider
-			print(currPos)
 	else:
 		hand_sprite.visible = false
 	# click interaction

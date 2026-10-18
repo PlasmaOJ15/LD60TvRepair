@@ -39,7 +39,6 @@ func _process(_delta: float) -> void:
 				dial_tick.play()
 			currPos = ((int(aim_proxy.rotation_degrees) % 360 + 180)/snapDivider)
 			assets.rotation_degrees = (currPos+18) * snapDivider
-			print(currPos)
 	else:
 		hand_sprite.visible = false
 	# click interaction

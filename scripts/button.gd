@@ -7,7 +7,12 @@ var current_state: State = State.WAITING
 @export var time_to_wait: float = 5.0      # Seconds before it wants to be clicked
 @export var active_duration: float = 3.0   # Seconds it stays white (wants to be clicked)
 
+@onready var game_ready: AudioStreamPlayer2D = $"../gameReady"
+@onready var game_over: AudioStreamPlayer2D = $"../gameOver"
+
 @onready var timer: Timer = $Timer
+
+signal gameOver
 
 var rng = RandomNumberGenerator.new()
 
@@ -49,12 +54,15 @@ func start_active() -> void:
 	disabled = false                       
 	modulate = Color.WHITE                 
 	timer.wait_time = active_duration
+	game_ready.play()
 	print("CLICK THE BUTTON")
 	timer.start()
 
 
 # the player didn't click the buton in time
 func start_failed() -> void:
+	gameOver.emit()
+	game_over.play()
 	current_state = State.FAILED
 	disabled = false                       
 	modulate = Color.RED                   
@@ -83,5 +91,5 @@ func _on_timer_timeout() -> void:
 
 # when player clicks the button checks to make sure it should do anything based on action
 func _on_pressed() -> void:
-	if current_state == State.ACTIVE or current_state == State.FAILED:
+	if current_state == State.ACTIVE:
 		start_clicked()

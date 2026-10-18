@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://bvavbwdtlpjoj"]
+
+[ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
+[ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
+[ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
+[ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="3_iwfvr"]
+[ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="4_6y1sk"]
+[ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
+[ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
+[ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
+[ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
+[ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
+[ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_g4v7s"]
+stream_count = 3
+stream_0/stream = ExtResource("9_iwfvr")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("10_67h2a")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("11_fh53y")
+stream_2/volume = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1152, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
+size = Vector2(1152, 318)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1ob"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lft"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y1sk"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph1ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y1sk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8178"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur2bf"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwfvr"]
+atlas = ExtResource("9_g0bpt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8178"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8178")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur2bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwfvr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TVRepair" type="Node2D" unique_id=754929928]
+
+[node name="Logic" type="Node2D" parent="." unique_id=1714028281]
+script = ExtResource("1_l8d2w")
+debug = true
+
+[node name="debug" type="Node2D" parent="Logic" unique_id=1015605578]
+
+[node name="antennaL" type="ColorRect" parent="Logic/debug" unique_id=1993411561]
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 416.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="antennaR" type="ColorRect" parent="Logic/debug" unique_id=2055397605]
+offset_left = 752.0
+offset_top = 260.0
+offset_right = 792.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialD" type="ColorRect" parent="Logic/debug" unique_id=214206370]
+offset_left = 887.0
+offset_top = 519.0
+offset_right = 927.0
+offset_bottom = 559.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialU" type="ColorRect" parent="Logic/debug" unique_id=1371329366]
+offset_left = 887.0
+offset_top = 415.0
+offset_right = 927.0
+offset_bottom = 455.0
+color = Color(1, 0, 0, 1)
+
+[node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
+position = Vector2(0, -88)
+script = ExtResource("2_p04im")
+
+[node name="assets" type="Node2D" parent="Shelf" unique_id=1839037105]
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/assets" unique_id=1922070943]
+offset_top = 288.0
+offset_right = 1152.0
+offset_bottom = 328.0
+mouse_filter = 2
+color = Color(0.5513578, 0.55135787, 0.5513578, 1)
+
+[node name="TV1" type="Node2D" parent="Shelf" unique_id=408491865]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_iwfvr")
+
+[node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
+
+[node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("5_6vb1h")]
+position = Vector2(-85.99999, -61)
+scale = Vector2(0.4, 0.4)
+
+[node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_iwfvr")
+offset = 400
+
+[node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Shelf/TV2" unique_id=963304027]
+offset_left = 25.000008
+offset_top = 27.000002
+offset_right = 1177.0
+offset_bottom = 673.0
+scale = Vector2(0.2, 0.2)
+script = ExtResource("5_ph1ob")
+
+[node name="SubViewport" type="SubViewport" parent="Shelf/TV2/SubViewportContainer" unique_id=2000141939]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 646)
+render_target_update_mode = 0
+
+[node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("6_liy50")]
+position = Vector2(584, 328)
+
+[node name="TV3" type="Node2D" parent="Shelf" unique_id=1083899338]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("3_iwfvr")
+offset = 800
+
+[node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("4_6y1sk")]
+position = Vector2(179, 55)
+
+[node name="SimonSays" parent="Shelf/TV3" unique_id=1031054397 instance=ExtResource("7_h3lft")]
+position = Vector2(141, 81)
+scale = Vector2(0.215, 0.215)
+
+[node name="music" type="AudioStreamPlayer" parent="Shelf" unique_id=1843814436]
+stream = SubResource("AudioStreamSynchronized_g4v7s")
+
+[node name="Repair" type="Node2D" parent="." unique_id=553423842]
+position = Vector2(0, 120)
+
+[node name="TV" parent="Repair" unique_id=1870081773 instance=ExtResource("2_onf2w")]
+position = Vector2(580, 499)
+
+[node name="correctTic" type="AudioStreamPlayer2D" parent="." unique_id=2010563394]
+position = Vector2(580, 504)
+stream = ExtResource("4_cr3sw")
+
+[node name="cameraMovement" type="Node2D" parent="." unique_id=1004633116]
+position = Vector2(576, 488)
+script = ExtResource("8_120fa")
+
+[node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1000533642]
+position = Vector2(576, 163)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveDown" unique_id=408506770]
+position = Vector2(576, 431)
+shape = SubResource("RectangleShape2D_120fa")
+
+[node name="camera" type="Camera2D" parent="cameraMovement" unique_id=923564496]
+
+[node name="hands" type="Node2D" parent="." unique_id=1658747221]
+
+[node name="handL" type="AnimatedSprite2D" parent="hands" unique_id=459879618]
+position = Vector2(200.00002, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="handR" type="AnimatedSprite2D" parent="hands" unique_id=711839900]
+position = Vector2(950, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k8178")
+autoplay = "default"
+flip_h = true
+
+[connection signal="gameOver" from="Shelf/TV1/ButtonGame" to="Shelf" method="_on_button_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV2/SubViewportContainer/SubViewport/balloonGame" to="Shelf" method="_on_balloon_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV3/SimonSays" to="Shelf" method="_on_simon_says_game_over"]
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveUp" to="cameraMovement" method="_on_camera_move_up_mouse_entered"]
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveDown" to="cameraMovement" method="_on_camera_move_down_mouse_entered"]

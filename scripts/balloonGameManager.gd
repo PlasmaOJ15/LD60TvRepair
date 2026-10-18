@@ -2,6 +2,10 @@ extends Node2D
 @onready var catcher: CharacterBody2D = $Catcher
 @onready var balloon: CharacterBody2D = $Balloon
 
+@onready var game_over: AudioStreamPlayer2D = $gameOver
+
+signal gameOver
+
 var playing = false;
 	
 func _ready() -> void:
@@ -17,4 +21,6 @@ func startGame():
 	
 func endGame():
 	#end game
+	game_over.play()
+	gameOver.emit()
 	playing = false;

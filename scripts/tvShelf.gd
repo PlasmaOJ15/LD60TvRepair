@@ -4,6 +4,8 @@ extends Node2D
 
 var gameToStart
 
+var active := false
+
 var enteringFrame := false
 
 # Called when the node enters the scene tree for the first time.
@@ -14,12 +16,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if enteringFrame:
-		position.x = move_toward(position.x, 9 + offset, 50)
-		if position.x == 9 + offset:
+		position.x = move_toward(position.x, offset, 50)
+		if position.x == offset:
 			enteringFrame = false
 
 func enterFrame():
 	enteringFrame = true
 
 func startGame():
+	active = true
 	gameToStart.startGame()
