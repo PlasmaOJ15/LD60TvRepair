@@ -25,9 +25,6 @@ stream_1/volume = 0.0
 stream_2/stream = ExtResource("11_fh53y")
 stream_2/volume = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1152, 126)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
 size = Vector2(1152, 318)
 
@@ -208,10 +205,6 @@ script = ExtResource("8_120fa")
 
 [node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
 position = Vector2(-576, -488)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1000533642]
-position = Vector2(576, 163)
-shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
 position = Vector2(-576, -488)
