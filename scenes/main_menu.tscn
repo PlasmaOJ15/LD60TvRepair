@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjq5xa0auq0km" path="res://scenes/mainMenu.gd" id="1_l6cm7"]
 
-[node name="MainMenu" type="Node2D" unique_id=817900445]
+[node name="MainMenu" type="CanvasLayer" unique_id=1079479349]
 script = ExtResource("1_l6cm7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1559365536]

@@ -5,6 +5,8 @@ extends Node2D
 @onready var a_1: Node2D = $a1
 @onready var a_2: Node2D = $a2
 @onready var player_sprite: AnimatedSprite2D = $assets/PlayerSprite
+@onready var staticAsset: AnimatedSprite2D = $assets/Static
+@onready var static_audio: AudioStreamPlayer2D = $staticAudio
 
 var animInt = 0
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +40,9 @@ func getValue(item: int) -> int:
 		return d_2.getValue()
 	return -1
 
+func staticDisable():
+	staticAsset.play("blank")
+	static_audio.stop()
 
 func _on_player_sprite_animation_finished() -> void:
 	if player_sprite.animation == "transition":

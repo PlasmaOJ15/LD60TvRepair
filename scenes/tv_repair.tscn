@@ -3,19 +3,27 @@
 [ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
-[ext_resource type="Script" uid="uid://h7w4wnncmpy4" path="res://scenes/tvStart.gd" id="3_liy50"]
+[ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="3_iwfvr"]
 [ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="4_6y1sk"]
 [ext_resource type="AudioStream" uid="uid://ds8pwqd4n1vr5" path="res://assets/Audio/dialTickCorrect.wav" id="4_cr3sw"]
 [ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
 [ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
-[ext_resource type="Texture2D" uid="uid://dhirxaiwpcv87" path="res://assets/tvOverlay.png" id="6_k8178"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
 [ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
 [ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(1152, 126)
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_g4v7s"]
+stream_count = 3
+stream_0/stream = ExtResource("9_iwfvr")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("10_67h2a")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("11_fh53y")
+stream_2/volume = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
 size = Vector2(1152, 318)
@@ -122,7 +130,7 @@ script = ExtResource("2_p04im")
 
 [node name="ColorRect" type="ColorRect" parent="Shelf/assets" unique_id=1922070943]
 offset_top = 288.0
-offset_right = 1160.0
+offset_right = 1152.0
 offset_bottom = 328.0
 mouse_filter = 2
 color = Color(0.5513578, 0.55135787, 0.5513578, 1)
@@ -130,7 +138,7 @@ color = Color(0.5513578, 0.55135787, 0.5513578, 1)
 [node name="TV1" type="Node2D" parent="Shelf" unique_id=408491865]
 visible = false
 position = Vector2(1209, 46)
-script = ExtResource("3_liy50")
+script = ExtResource("3_iwfvr")
 
 [node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("4_6y1sk")]
 position = Vector2(179, 55)
@@ -139,15 +147,10 @@ position = Vector2(179, 55)
 position = Vector2(-85.99999, -61)
 scale = Vector2(0.4, 0.4)
 
-[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV1" unique_id=718706271]
-position = Vector2(179, 55)
-scale = Vector2(3, 3)
-texture = ExtResource("6_k8178")
-
 [node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
 visible = false
 position = Vector2(1209, 46)
-script = ExtResource("3_liy50")
+script = ExtResource("3_iwfvr")
 offset = 400
 
 [node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("4_6y1sk")]
@@ -170,15 +173,10 @@ render_target_update_mode = 0
 [node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("6_liy50")]
 position = Vector2(584, 328)
 
-[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV2" unique_id=1982266096]
-position = Vector2(179, 55)
-scale = Vector2(3, 3)
-texture = ExtResource("6_k8178")
-
 [node name="TV3" type="Node2D" parent="Shelf" unique_id=1083899338]
 visible = false
 position = Vector2(1209, 46)
-script = ExtResource("3_liy50")
+script = ExtResource("3_iwfvr")
 offset = 800
 
 [node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("4_6y1sk")]
@@ -188,10 +186,8 @@ position = Vector2(179, 55)
 position = Vector2(141, 81)
 scale = Vector2(0.215, 0.215)
 
-[node name="TvOverlay" type="Sprite2D" parent="Shelf/TV3" unique_id=2062490692]
-position = Vector2(179, 55)
-scale = Vector2(3, 3)
-texture = ExtResource("6_k8178")
+[node name="music" type="AudioStreamPlayer" parent="Shelf" unique_id=1843814436]
+stream = SubResource("AudioStreamSynchronized_g4v7s")
 
 [node name="Repair" type="Node2D" parent="." unique_id=553423842]
 position = Vector2(0, 120)
@@ -209,10 +205,6 @@ script = ExtResource("8_120fa")
 
 [node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
 position = Vector2(-576, -488)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1000533642]
-position = Vector2(576, 163)
-shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
 position = Vector2(-576, -488)
@@ -238,5 +230,8 @@ sprite_frames = SubResource("SpriteFrames_k8178")
 autoplay = "default"
 flip_h = true
 
+[connection signal="gameOver" from="Shelf/TV1/ButtonGame" to="Shelf" method="_on_button_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV2/SubViewportContainer/SubViewport/balloonGame" to="Shelf" method="_on_balloon_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV3/SimonSays" to="Shelf" method="_on_simon_says_game_over"]
 [connection signal="mouse_entered" from="cameraMovement/cameraMoveUp" to="cameraMovement" method="_on_camera_move_up_mouse_entered"]
 [connection signal="mouse_entered" from="cameraMovement/cameraMoveDown" to="cameraMovement" method="_on_camera_move_down_mouse_entered"]

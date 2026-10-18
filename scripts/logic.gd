@@ -43,8 +43,8 @@ func _ready() -> void:
 func randomizeVals():
 	antL = rng.randi_range(0,18)
 	antR = rng.randi_range(0,18)
-	dialU = rng.randi_range(0,35)
-	dialD = rng.randi_range(0,35)
+	dialU = rng.randi_range(0,17)
+	dialD = rng.randi_range(0,17)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

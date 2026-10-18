@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LD60TvRepair"
-run/main_scene="uid://bv65awdxplkf0"
+run/main_scene="uid://of3xxtdwq88r"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

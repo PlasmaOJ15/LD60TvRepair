@@ -5,6 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://cr5x6opjw877i" path="res://assets/Audio/gameReady (1).wav" id="3_1jb2c"]
 [ext_resource type="AudioStream" uid="uid://c53gmg5uatbgq" path="res://assets/Audio/gameReady (2).wav" id="4_to3xi"]
 [ext_resource type="AudioStream" uid="uid://bw6utbp3sh58a" path="res://assets/Audio/gameReady (3).wav" id="5_hvdy3"]
+[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="6_gbl3l"]
+[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="7_vvi8g"]
+[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="8_5xox2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tji7j"]
 bg_color = Color(0, 1, 0, 1)
@@ -32,6 +35,12 @@ streams_count = 3
 stream_0/stream = ExtResource("3_1jb2c")
 stream_1/stream = ExtResource("4_to3xi")
 stream_2/stream = ExtResource("5_hvdy3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_opmx1"]
+streams_count = 3
+stream_0/stream = ExtResource("6_gbl3l")
+stream_1/stream = ExtResource("7_vvi8g")
+stream_2/stream = ExtResource("8_5xox2")
 
 [node name="SimonSays" type="Node2D" unique_id=1031054397]
 script = ExtResource("1_rkrt7")
@@ -82,6 +91,11 @@ one_shot = true
 
 [node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=1962923899]
 stream = SubResource("AudioStreamRandomizer_g4v7s")
+volume_db = 10.0
+
+[node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1730577686]
+stream = SubResource("AudioStreamRandomizer_opmx1")
+volume_db = 10.0
 
 [connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Red" to="." method="_on_red_pressed"]

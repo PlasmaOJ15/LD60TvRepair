@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://de7wak8qtoo8h"
-path="res://.godot/imported/BallonGameMusic.wav-f5c55e3b130b196c0067a9eec9e79ae5.sample"
+path="res://.godot/imported/BallonGameMusic.wav-cc7746555b2df58a3e1d8e7d5a1822ae.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/MusicTracks/BallonGameMusic.wav"
-dest_files=["res://.godot/imported/BallonGameMusic.wav-f5c55e3b130b196c0067a9eec9e79ae5.sample"]
+source_file="res://assets/Audio/MusicTracks/BallonGameMusic.wav"
+dest_files=["res://.godot/imported/BallonGameMusic.wav-cc7746555b2df58a3e1d8e7d5a1822ae.sample"]
 
 [params]
 
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=2

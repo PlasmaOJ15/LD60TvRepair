@@ -16,12 +16,12 @@ var isActive := false
 
 var currPos := 0
 
-var snapDivider := 10
+var snapDivider := 20
 
 func _process(_delta: float) -> void:
 	if isActive:
 		# Look at the mouse and do some wacky math, returning a value of
-		# 0 - 36
+		# 0 - 18
 		aim_proxy.look_at(get_global_mouse_position())
 		if (int(aim_proxy.rotation_degrees) % 360)/snapDivider != currPos:
 			dial_tick.play()
@@ -30,7 +30,6 @@ func _process(_delta: float) -> void:
 				currPos += 360
 				aim_proxy.rotation_degrees += 360
 			assets.rotation_degrees = currPos * snapDivider
-			print(currPos)
 	else:
 		hand_sprite.visible = false
 	# click interaction

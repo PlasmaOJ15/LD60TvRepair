@@ -3,6 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_apkqr"]
 [ext_resource type="Script" uid="uid://bu1s70ab0f8e" path="res://scripts/button_game.gd" id="1_bnp38"]
 [ext_resource type="Script" uid="uid://bew56xncjsbq2" path="res://scripts/button.gd" id="2_apkqr"]
+[ext_resource type="AudioStream" uid="uid://cr5x6opjw877i" path="res://assets/Audio/gameReady (1).wav" id="4_qgfjd"]
+[ext_resource type="AudioStream" uid="uid://c53gmg5uatbgq" path="res://assets/Audio/gameReady (2).wav" id="5_j513u"]
+[ext_resource type="AudioStream" uid="uid://bw6utbp3sh58a" path="res://assets/Audio/gameReady (3).wav" id="6_7r0k0"]
+[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_ju4nd"]
+[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_s1yls"]
+[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_ylffm"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ju4nd"]
+streams_count = 3
+stream_0/stream = ExtResource("4_qgfjd")
+stream_1/stream = ExtResource("5_j513u")
+stream_2/stream = ExtResource("6_7r0k0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lpjg5"]
+streams_count = 3
+stream_0/stream = ExtResource("7_ju4nd")
+stream_1/stream = ExtResource("8_s1yls")
+stream_2/stream = ExtResource("9_ylffm")
 
 [node name="ButtonGame" type="Node2D" unique_id=306496527]
 script = ExtResource("1_bnp38")
@@ -16,3 +34,13 @@ icon = ExtResource("1_apkqr")
 script = ExtResource("2_apkqr")
 
 [node name="Timer" type="Timer" parent="Button" unique_id=1657692558]
+
+[node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=2023909212]
+stream = SubResource("AudioStreamRandomizer_ju4nd")
+volume_db = 10.0
+
+[node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=407784988]
+stream = SubResource("AudioStreamRandomizer_lpjg5")
+volume_db = 10.0
+
+[connection signal="gameOver" from="Button" to="." method="_on_button_game_over"]

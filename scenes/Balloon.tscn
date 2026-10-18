@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_lmd8b"]
 [ext_resource type="Script" uid="uid://bvkpsv16spiuv" path="res://scripts/balloonController.gd" id="3_egdey"]
 [ext_resource type="Script" uid="uid://crs7r5m7yro15" path="res://scenes/loseArea.gd" id="4_3r1ia"]
-[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://Assets/Audio/BalloonBounce.wav" id="5_opmx1"]
+[ext_resource type="AudioStream" uid="uid://b853rxmrba7al" path="res://assets/Audio/BalloonBounce.wav" id="5_opmx1"]
+[ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_7gbql"]
+[ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_g7uyc"]
+[ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_a5gnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
 size = Vector2(160, 36)
@@ -21,6 +24,12 @@ size = Vector2(1147, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buomr"]
 size = Vector2(41, 622)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_le8d2"]
+streams_count = 3
+stream_0/stream = ExtResource("7_7gbql")
+stream_1/stream = ExtResource("8_g7uyc")
+stream_2/stream = ExtResource("9_a5gnl")
 
 [node name="BalloonGame" type="Node2D" unique_id=1874709638]
 script = ExtResource("1_6ukt2")
@@ -102,6 +111,10 @@ shape = SubResource("RectangleShape2D_buomr")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=1937177772]
 position = Vector2(594, -66)
 shape = SubResource("RectangleShape2D_buomr")
+
+[node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1428905131]
+stream = SubResource("AudioStreamRandomizer_le8d2")
+volume_db = 10.0
 
 [connection signal="area_entered" from="LoseArea" to="LoseArea" method="_on_area_entered"]
 [connection signal="body_entered" from="LoseArea" to="LoseArea" method="_on_body_entered"]

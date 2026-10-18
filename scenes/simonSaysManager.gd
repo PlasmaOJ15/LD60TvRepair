@@ -8,6 +8,11 @@ extends Node2D
 @onready var red: Button = $Red
 @onready var signal_group: SignalGroup = $SignalGroup
 
+@onready var game_ready: AudioStreamPlayer2D = $gameReady
+@onready var game_over: AudioStreamPlayer2D = $gameOver
+
+signal gameOver()
+
 var patternLength = 3;
 var timeUntilNextPattern = 10;
 var random = RandomNumberGenerator.new();
@@ -32,6 +37,7 @@ func _ready() -> void:
 	
 func EndGame():
 	#stop all timers
+	game_over.play()
 	enter_pattern_timer.stop()
 	flash_color_timer.stop()
 	enter_pattern_timer.stop()
@@ -66,6 +72,7 @@ func ShowPattern():
 	
 	#show pattern
 	for i in patternLength:
+		game_ready.play()
 		flash_color_timer.start();
 		ShowColor(colorPatterns[i]);
 		#wait until timer is done
@@ -99,7 +106,6 @@ func CheckPattern():
 	#if button pressed, check if button = next in pattern
 	
 	for i in patternLength:
-	
 		var button = await signal_group.any(signals)
 		match button.name:
 			"Green":
@@ -113,6 +119,7 @@ func CheckPattern():
 			correct = true
 		else:
 			correct = false
+			gameOver.emit()
 			EndGame();
 			break
 			
@@ -125,6 +132,7 @@ func CheckPattern():
 
 func _on_enter_pattern_timer_timeout() -> void:
 	#break tv
+	gameOver.emit()
 	EndGame();
 	pass
 
