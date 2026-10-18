@@ -50,7 +50,7 @@ grow_vertical = 2
 color = Color(0.35063845, 0.4378314, 0.3771816, 1)
 
 [node name="Catcher" type="CharacterBody2D" parent="." unique_id=1792591579]
-position = Vector2(0, 87.165)
+position = Vector2(0, 87)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_1nhty")
