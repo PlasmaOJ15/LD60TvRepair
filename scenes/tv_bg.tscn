@@ -4,29 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://dfq05hc0k8mrs" path="res://assets/antenna.png" id="2_d5jtn"]
 [ext_resource type="Texture2D" uid="uid://d1u2xhqhfbqqd" path="res://assets/dial.png" id="3_wqq24"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqq24"]
+atlas = ExtResource("1_wqq24")
+region = Rect2(128, 128, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c08w8"]
 atlas = ExtResource("1_wqq24")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(0, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h05e0"]
 atlas = ExtResource("1_wqq24")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_127up"]
-atlas = ExtResource("1_wqq24")
-region = Rect2(0, 128, 128, 128)
+region = Rect2(128, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wqq24")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c08w8")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h05e0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_127up")
 }],
 "loop": 1,
 "name": &"default",

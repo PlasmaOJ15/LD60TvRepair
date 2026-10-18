@@ -10,6 +10,7 @@ extends Node2D
 
 @onready var game_ready: AudioStreamPlayer2D = $gameReady
 @onready var game_over: AudioStreamPlayer2D = $gameOver
+@onready var simon_ready: AudioStreamPlayer2D = $simonReady
 
 signal gameOver()
 
@@ -69,7 +70,12 @@ func RandomizePattern():
 func ShowPattern():
 	RandomizePattern();
 	color_rect.visible = true;
-	
+	simon_ready.play()
+	color_rect.color = Color(0.5, 0.5, 0.5, 1.0);
+	flash_color_timer.start();
+	await flash_color_timer.timeout
+	flash_color_timer.start();
+	await flash_color_timer.timeout
 	#show pattern
 	for i in patternLength:
 		game_ready.play()

@@ -6,28 +6,41 @@
 [ext_resource type="AudioStream" uid="uid://c53gmg5uatbgq" path="res://assets/Audio/gameReady (2).wav" id="4_to3xi"]
 [ext_resource type="AudioStream" uid="uid://bw6utbp3sh58a" path="res://assets/Audio/gameReady (3).wav" id="5_hvdy3"]
 [ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="6_gbl3l"]
+[ext_resource type="AudioStream" uid="uid://dgonv5pd6vot5" path="res://assets/Audio/simonReady.wav" id="6_vvi8g"]
 [ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="7_vvi8g"]
 [ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="8_5xox2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xox2"]
+bg_color = Color(0, 0.5921569, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tji7j"]
 bg_color = Color(0, 1, 0, 1)
 
 [sub_resource type="Theme" id="Theme_ym2wr"]
 Button/styles/disabled = null
+Button/styles/hover = SubResource("StyleBoxFlat_5xox2")
 Button/styles/normal = SubResource("StyleBoxFlat_tji7j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbl3l"]
+bg_color = Color(2.2621452e-06, 0, 0.6429605, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkrt7"]
 bg_color = Color(0, 0, 1, 1)
 
 [sub_resource type="Theme" id="Theme_raf0d"]
 Button/styles/disabled = null
+Button/styles/hover = SubResource("StyleBoxFlat_gbl3l")
 Button/styles/normal = SubResource("StyleBoxFlat_rkrt7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvi8g"]
+bg_color = Color(0.6749878, 2.0696223e-06, 6.256998e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raf0d"]
 bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_gmbsi"]
 Button/styles/disabled = null
+Button/styles/hover = SubResource("StyleBoxFlat_vvi8g")
 Button/styles/normal = SubResource("StyleBoxFlat_raf0d")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
@@ -47,15 +60,6 @@ script = ExtResource("1_rkrt7")
 
 [node name="SignalGroup" type="Node2D" parent="." unique_id=959086922]
 script = ExtResource("2_raf0d")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=733018305]
-visible = false
-z_index = 2
-offset_left = -577.0
-offset_top = -335.0
-offset_right = 580.0
-offset_bottom = 325.0
-color = Color(0, 1, 0, 1)
 
 [node name="Green" type="Button" parent="." unique_id=1893689982]
 offset_left = -499.0
@@ -78,6 +82,13 @@ offset_right = 469.0
 offset_bottom = 136.0
 theme = SubResource("Theme_gmbsi")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=733018305]
+offset_left = -577.0
+offset_top = -565.0
+offset_right = 580.0
+offset_bottom = 555.0
+color = Color(0, 1, 0, 1)
+
 [node name="EnterPatternTimer" type="Timer" parent="." unique_id=919259709]
 wait_time = 6.0
 one_shot = true
@@ -91,6 +102,10 @@ one_shot = true
 
 [node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=1962923899]
 stream = SubResource("AudioStreamRandomizer_g4v7s")
+volume_db = 10.0
+
+[node name="simonReady" type="AudioStreamPlayer2D" parent="." unique_id=968962623]
+stream = ExtResource("6_vvi8g")
 volume_db = 10.0
 
 [node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1730577686]
