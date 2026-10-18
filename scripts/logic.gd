@@ -106,6 +106,7 @@ func _process(_delta: float) -> void:
 			active = true
 			enteringFrame = true
 		else:
+			tv.staticDisable()
 			tv.disable()
 			tv.position.x = move_toward(tv.position.x, -1000, 50)
 func getTV():
