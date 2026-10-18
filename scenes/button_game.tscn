@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b85km7tmsqm5h"]
 
-[ext_resource type="Texture2D" uid="uid://bbb6n8spen81k" path="res://icon.svg" id="1_apkqr"]
 [ext_resource type="Script" uid="uid://bu1s70ab0f8e" path="res://scripts/button_game.gd" id="1_bnp38"]
 [ext_resource type="Script" uid="uid://bew56xncjsbq2" path="res://scripts/button.gd" id="2_apkqr"]
 [ext_resource type="AudioStream" uid="uid://cr5x6opjw877i" path="res://assets/Audio/gameReady (1).wav" id="4_qgfjd"]
@@ -8,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bw6utbp3sh58a" path="res://assets/Audio/gameReady (3).wav" id="6_7r0k0"]
 [ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_ju4nd"]
 [ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_s1yls"]
+[ext_resource type="Texture2D" uid="uid://csuwvdrfgc4us" path="res://assets/buttonTextSpriteSheet.png" id="9_s1yls"]
 [ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_ylffm"]
+[ext_resource type="Texture2D" uid="uid://hk3cf0lpgj58" path="res://assets/buttonSpriteSheet.png" id="10_s1yls"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ju4nd"]
 streams_count = 3
@@ -22,18 +23,119 @@ stream_0/stream = ExtResource("7_ju4nd")
 stream_1/stream = ExtResource("8_s1yls")
 stream_2/stream = ExtResource("9_ylffm")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylffm"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpjg5"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880tq"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r82cu"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oejb7"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g8i7"]
+atlas = ExtResource("10_s1yls")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylffm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpjg5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r82cu")
+}],
+"loop": 0,
+"name": &"press",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oejb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g8i7")
+}],
+"loop": 1,
+"name": &"pressLoop",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmwig"]
+atlas = ExtResource("9_s1yls")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5cjr"]
+atlas = ExtResource("9_s1yls")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs71a"]
+atlas = ExtResource("9_s1yls")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56kh4"]
+atlas = ExtResource("9_s1yls")
+region = Rect2(0, 96, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmwig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmwig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5cjr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs71a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56kh4")
+}],
+"loop": 1,
+"name": &"pressNow",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmv3w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxf2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67h2a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh53y"]
+
 [node name="ButtonGame" type="Node2D" unique_id=306496527]
 script = ExtResource("1_bnp38")
-
-[node name="Button" type="Button" parent="." unique_id=951741531]
-offset_left = 464.0
-offset_top = 250.0
-offset_right = 658.0
-offset_bottom = 386.0
-icon = ExtResource("1_apkqr")
-script = ExtResource("2_apkqr")
-
-[node name="Timer" type="Timer" parent="Button" unique_id=1657692558]
 
 [node name="gameReady" type="AudioStreamPlayer2D" parent="." unique_id=2023909212]
 stream = SubResource("AudioStreamRandomizer_ju4nd")
@@ -43,4 +145,32 @@ volume_db = 10.0
 stream = SubResource("AudioStreamRandomizer_lpjg5")
 volume_db = 10.0
 
+[node name="buttonSprites" type="AnimatedSprite2D" parent="." unique_id=2000214605]
+position = Vector2(558, 419)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"press"
+autoplay = "pressLoop"
+
+[node name="textSprites" type="AnimatedSprite2D" parent="." unique_id=1410499119]
+position = Vector2(598, 218)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_pmwig")
+autoplay = "default"
+
+[node name="Button" type="Button" parent="." unique_id=951741531]
+offset_left = 414.44116
+offset_top = 344.0
+offset_right = 714.0
+offset_bottom = 554.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmv3w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pxf2r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iwfvr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_67h2a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fh53y")
+script = ExtResource("2_apkqr")
+
+[node name="Timer" type="Timer" parent="Button" unique_id=1657692558]
+
+[connection signal="animation_finished" from="buttonSprites" to="Button" method="_on_button_sprites_animation_finished"]
 [connection signal="gameOver" from="Button" to="." method="_on_button_game_over"]

@@ -12,6 +12,9 @@ var current_state: State = State.WAITING
 
 @onready var timer: Timer = $Timer
 
+@onready var button_sprites: AnimatedSprite2D = $"../buttonSprites"
+@onready var text_sprites: AnimatedSprite2D = $"../textSprites"
+
 signal gameOver
 
 var rng = RandomNumberGenerator.new()
@@ -54,6 +57,8 @@ func start_active() -> void:
 	disabled = false                       
 	modulate = Color.WHITE                 
 	timer.wait_time = active_duration
+	button_sprites.play("default")
+	text_sprites.play("pressNow")
 	game_ready.play()
 	print("CLICK THE BUTTON")
 	timer.start()
@@ -73,7 +78,9 @@ func start_failed() -> void:
 func start_clicked() -> void:
 	current_state = State.CLICKED
 	disabled = true                        
-	modulate = Color.GREEN                 
+	modulate = Color.GREEN     
+	button_sprites.play("press")     
+	text_sprites.play("default")       
 	timer.wait_time = 1.0                  
 	timer.start()
 
@@ -93,3 +100,8 @@ func _on_timer_timeout() -> void:
 func _on_pressed() -> void:
 	if current_state == State.ACTIVE:
 		start_clicked()
+
+
+func _on_button_sprites_animation_finished() -> void:
+	if button_sprites.animation == "press":
+		button_sprites.play("pressLoop")

@@ -9,9 +9,7 @@ extends Node2D
 @onready var static_audio: AudioStreamPlayer2D = $staticAudio
 
 var animInt = 0
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+
 
 func playAnim(animIntA):
 	animInt = animIntA
@@ -41,7 +39,7 @@ func getValue(item: int) -> int:
 	return -1
 
 func staticDisable():
-	staticAsset.play("blank")
+	staticAsset.visible = false
 	static_audio.stop()
 
 func _on_player_sprite_animation_finished() -> void:

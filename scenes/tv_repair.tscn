@@ -25,6 +25,9 @@ stream_1/volume = 0.0
 stream_2/stream = ExtResource("11_fh53y")
 stream_2/volume = 0.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1152, 168)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
 size = Vector2(1152, 318)
 
@@ -144,8 +147,8 @@ script = ExtResource("3_iwfvr")
 position = Vector2(179, 55)
 
 [node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("5_6vb1h")]
-position = Vector2(-85.99999, -61)
-scale = Vector2(0.4, 0.4)
+position = Vector2(-46, -19)
+scale = Vector2(0.333, 0.333)
 
 [node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
 visible = false
@@ -205,6 +208,10 @@ script = ExtResource("8_120fa")
 
 [node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
 position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1119773206]
+position = Vector2(576, 136)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
 position = Vector2(-576, -488)
