@@ -110,7 +110,6 @@ script = ExtResource("1_l8d2w")
 debug = true
 
 [node name="debug" type="Node2D" parent="Logic" unique_id=1015605578]
-visible = false
 
 [node name="antennaL" type="ColorRect" parent="Logic/debug" unique_id=1993411561]
 offset_left = 376.0
