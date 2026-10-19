@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://of3xxtdwq88r"]
 
 [ext_resource type="Script" uid="uid://cjq5xa0auq0km" path="res://scenes/mainMenu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://0cr00032yw15" path="res://Assets/Button.png" id="2_ekxnf"]
+
+[sub_resource type="SystemFont" id="SystemFont_87wxl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl7pq"]
+texture = ExtResource("2_ekxnf")
+
+[sub_resource type="SystemFont" id="SystemFont_idfeh"]
+font_weight = 425
+
+[sub_resource type="Theme" id="Theme_58d6l"]
+default_font = SubResource("SystemFont_idfeh")
+Button/fonts/font = SubResource("SystemFont_87wxl")
+Button/styles/normal = SubResource("StyleBoxTexture_sl7pq")
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1079479349]
 script = ExtResource("1_l6cm7")
@@ -13,12 +27,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = -50.0
+offset_left = -292.0
+offset_top = -162.0
+offset_right = -46.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_58d6l")
+theme_override_font_sizes/font_size = 25
 text = "START GAME!"
 
 [node name="Endless" type="Button" parent="." unique_id=75723813]
@@ -27,12 +43,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 4.0
-offset_right = 100.0
-offset_bottom = 54.0
+offset_left = 65.0
+offset_top = -162.0
+offset_right = 311.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_58d6l")
+theme_override_font_sizes/font_size = 25
 text = "ENDLESS"
 
 [node name="CreditsButton" type="Button" parent="." unique_id=2065932304]
@@ -41,12 +59,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 108.0
-offset_right = 100.0
-offset_bottom = 158.0
+offset_left = -292.0
+offset_top = 67.0
+offset_right = -46.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_58d6l")
+theme_override_font_sizes/font_size = 25
 text = "CREDITS"
 
 [node name="Quit Button" type="Button" parent="." unique_id=1079850534]
@@ -55,12 +75,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 208.0
-offset_right = 100.0
-offset_bottom = 258.0
+offset_left = 65.0
+offset_top = 67.0
+offset_right = 311.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_58d6l")
+theme_override_font_sizes/font_size = 25
 text = "QUIT!!!"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
