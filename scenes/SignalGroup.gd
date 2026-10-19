@@ -9,6 +9,7 @@ var buttonPressed = green;
 signal _any_complete
 
 var buttons;
+var signalsBinded = false
 
 var _counter: int = 0
 
@@ -21,8 +22,10 @@ func any(signals: Array) -> Button:
 	if _counter == 0:
 		return;
 		
-	for i in signals.size():
-		signals[i].connect(_on_signal_complete.bind(buttons[i]))
+	if !signalsBinded:
+		for i in signals.size():
+			signals[i].connect(_on_signal_complete.bind(buttons[i]))
+		signalsBinded = true
 		
 	await _any_complete
 	return buttonPressed;
