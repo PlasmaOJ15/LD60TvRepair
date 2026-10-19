@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://baprfwmfk82h6" path="res://assets/Audio/failed (1).wav" id="7_7gbql"]
 [ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="8_g7uyc"]
 [ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="9_a5gnl"]
+[ext_resource type="Texture2D" uid="uid://cvtvovb626uyd" path="res://assets/wdarrows.png" id="12_le8d2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym2wr"]
 size = Vector2(218, 82)
@@ -115,6 +116,11 @@ volume_db = 10.0
 [node name="fallSound" type="AudioStreamPlayer" parent="." unique_id=1236299112]
 stream = ExtResource("4_a5gnl")
 volume_db = -5.0
+
+[node name="Wdarrows" type="Sprite2D" parent="." unique_id=237440106]
+position = Vector2(0, -20)
+scale = Vector2(12, 12)
+texture = ExtResource("12_le8d2")
 
 [connection signal="area_entered" from="LoseArea" to="LoseArea" method="_on_area_entered"]
 [connection signal="body_entered" from="LoseArea" to="LoseArea" method="_on_body_entered"]

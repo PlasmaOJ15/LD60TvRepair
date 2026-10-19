@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://coxvwlt23dcst"]
+
+[ext_resource type="Script" uid="uid://bbd3bmg7vhonq" path="res://scripts/warning.gd" id="1_fgfcp"]
+[ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="2_i3rmn"]
+[ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="3_18pth"]
+
+[node name="Control" type="Control" unique_id=1885453998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgfcp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=381179763]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1431349455]
+offset_right = 1380.0
+offset_bottom = 706.0
+color = Color(0.1893278, 0.18932778, 0.1893278, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1286425915]
+offset_left = 224.0
+offset_top = 284.0
+offset_right = 962.0
+offset_bottom = 387.0
+text = "This game uses audio heavily!
+Wear headphones for the best experience!"
+label_settings = ExtResource("2_i3rmn")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1486473033]
+offset_left = 512.0
+offset_top = 412.0
+offset_right = 678.0
+offset_bottom = 470.0
+theme = ExtResource("3_18pth")
+text = "Continue"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

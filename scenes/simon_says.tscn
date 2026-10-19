@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dgonv5pd6vot5" path="res://assets/Audio/simonReady.wav" id="6_vvi8g"]
 [ext_resource type="AudioStream" uid="uid://bmrcoi2ivc4qa" path="res://assets/Audio/failed (2).wav" id="7_vvi8g"]
 [ext_resource type="AudioStream" uid="uid://ookfdrr3asn5" path="res://assets/Audio/failed (3).wav" id="8_5xox2"]
+[ext_resource type="Texture2D" uid="uid://mmtasjyh3cik" path="res://assets/simonSays.png" id="10_5xox2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xox2"]
 bg_color = Color(0, 0.5921569, 0, 1)
@@ -111,6 +112,11 @@ volume_db = 10.0
 [node name="gameOver" type="AudioStreamPlayer2D" parent="." unique_id=1730577686]
 stream = SubResource("AudioStreamRandomizer_opmx1")
 volume_db = 10.0
+
+[node name="SimonSays" type="Sprite2D" parent="." unique_id=1867263705]
+position = Vector2(-1, 2.9999983)
+scale = Vector2(12, 12)
+texture = ExtResource("10_5xox2")
 
 [connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Red" to="." method="_on_red_pressed"]

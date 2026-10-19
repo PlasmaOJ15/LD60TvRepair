@@ -10,7 +10,7 @@ signal gameOver
 var playing = false;
 	
 func _ready() -> void:
-	pass
+	$Wdarrows.visible = true
 
 func startGame():
 	#reset balloon
