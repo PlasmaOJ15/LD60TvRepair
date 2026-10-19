@@ -43,8 +43,6 @@ var dDT := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.speedrun_time = 0.0
-	Global.final_score = 0
 	rng.randomize()
 	randomizeVals()
 	tv.setVals.call_deferred(antL, antR, dialU, dialD)

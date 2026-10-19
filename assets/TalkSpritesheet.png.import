@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da3n2xil8wqlf"
-path="res://.godot/imported/TalkSpritesheet.png-640fa1f3c3cc816b80c82c6bc4464b1d.ctex"
+path="res://.godot/imported/TalkSpritesheet.png-4c5b7617b250979a84a93299a4f7b06b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TalkSpritesheet.png"
-dest_files=["res://.godot/imported/TalkSpritesheet.png-640fa1f3c3cc816b80c82c6bc4464b1d.ctex"]
+source_file="res://Assets/TalkSpritesheet.png"
+dest_files=["res://.godot/imported/TalkSpritesheet.png-4c5b7617b250979a84a93299a4f7b06b.ctex"]
 
 [params]
 

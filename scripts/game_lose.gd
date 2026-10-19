@@ -7,6 +7,8 @@ extends Control
 @onready var door_close: AudioStreamPlayer2D = $DoorClose
 
 func _ready() -> void:
+	Global.speedrun_time = 0.0
+	Global.final_score = 0
 	thrown.play()
 func _on_kicked_out_animation_finished() -> void:
 	if kicked_out.animation == "default":

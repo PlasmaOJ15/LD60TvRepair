@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6fbbbdrdg5r5"
-path="res://.godot/imported/doorslamspritesheet.png-f5bb7706d89e7608d44dbfed82d92984.ctex"
+path="res://.godot/imported/doorslamspritesheet.png-402335934963f1e65a1158c885793802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/doorslamspritesheet.png"
-dest_files=["res://.godot/imported/doorslamspritesheet.png-f5bb7706d89e7608d44dbfed82d92984.ctex"]
+source_file="res://Assets/doorslamspritesheet.png"
+dest_files=["res://.godot/imported/doorslamspritesheet.png-402335934963f1e65a1158c885793802.ctex"]
 
 [params]
 

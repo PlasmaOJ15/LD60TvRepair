@@ -22,7 +22,6 @@ Global="*uid://5r7biqkwxma3"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [input]
 

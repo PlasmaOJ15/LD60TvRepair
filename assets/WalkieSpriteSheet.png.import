@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3xlw71rp5wh2"
-path="res://.godot/imported/WalkieSpriteSheet.png-79cdaafa0e3e877783e5a2d1afb71bb7.ctex"
+path="res://.godot/imported/WalkieSpriteSheet.png-8a6aa9e14b540aa6898614d0a472abf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WalkieSpriteSheet.png"
-dest_files=["res://.godot/imported/WalkieSpriteSheet.png-79cdaafa0e3e877783e5a2d1afb71bb7.ctex"]
+source_file="res://Assets/WalkieSpriteSheet.png"
+dest_files=["res://.godot/imported/WalkieSpriteSheet.png-8a6aa9e14b540aa6898614d0a472abf0.ctex"]
 
 [params]
 
