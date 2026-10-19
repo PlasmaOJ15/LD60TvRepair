@@ -10,6 +10,9 @@ extends Control
 @onready var final_scene: Node2D = $finalScene
 
 func _ready() -> void:
+	Global.winner = true
+	if Global.greenMode:
+		$greenMode.visible = true
 	$Ding.play()
 	score.text += str(Global.speedrun_time)
 	Global.speedrun_time = 0.0

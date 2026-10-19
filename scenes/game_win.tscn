@@ -3,17 +3,17 @@
 [ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="1_cnu5t"]
 [ext_resource type="Script" uid="uid://c5h6r0fnsijxx" path="res://scripts/game_win.gd" id="1_l1273"]
 [ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="2_l1273"]
-[ext_resource type="Texture2D" uid="uid://dp6fipdendc6s" path="res://Assets/winSpritesheet.png" id="4_7ej5r"]
-[ext_resource type="Texture2D" uid="uid://q83qm0ww15hc" path="res://Assets/VictorySpritesheet.png" id="5_oueg3"]
-[ext_resource type="Texture2D" uid="uid://ba4ioueabw7ky" path="res://Assets/finaleSprites.png" id="6_l81e3"]
-[ext_resource type="AudioStream" uid="uid://b0tast1t0cu8l" path="res://Assets/Audio/ld60WinSFX/ding.wav" id="7_4tn0k"]
+[ext_resource type="Texture2D" uid="uid://dp6fipdendc6s" path="res://assets/winSpritesheet.png" id="4_7ej5r"]
+[ext_resource type="Texture2D" uid="uid://q83qm0ww15hc" path="res://assets/VictorySpritesheet.png" id="5_oueg3"]
+[ext_resource type="Texture2D" uid="uid://ba4ioueabw7ky" path="res://assets/finaleSprites.png" id="6_l81e3"]
+[ext_resource type="AudioStream" uid="uid://b0tast1t0cu8l" path="res://assets/Audio/ld60WinSFX/ding.wav" id="7_4tn0k"]
 [ext_resource type="PackedScene" uid="uid://dipsey8g1w1io" path="res://scenes/tv_finale.tscn" id="8_knw36"]
-[ext_resource type="AudioStream" uid="uid://cvov1ihm25b7s" path="res://Assets/Audio/ld60WinSFX/falling.wav" id="8_skwon"]
-[ext_resource type="AudioStream" uid="uid://da5te4gc1ani7" path="res://Assets/Audio/ld60WinSFX/gasp.mp3" id="9_knw36"]
-[ext_resource type="AudioStream" uid="uid://dwd7wxvto1u26" path="res://Assets/Audio/ld60WinSFX/metalPipe.mp3" id="10_unifl"]
-[ext_resource type="AudioStream" uid="uid://ceyhl0mrkwcfg" path="res://Assets/Audio/ld60WinSFX/nextBatch.wav" id="11_2oo3t"]
-[ext_resource type="AudioStream" uid="uid://dcn46b6qgbsmh" path="res://Assets/Audio/ld60WinSFX/victory.ogg" id="12_id55i"]
-[ext_resource type="Texture2D" uid="uid://b3xlw71rp5wh2" path="res://Assets/WalkieSpriteSheet.png" id="13_4tn0k"]
+[ext_resource type="AudioStream" uid="uid://cvov1ihm25b7s" path="res://assets/Audio/ld60WinSFX/falling.wav" id="8_skwon"]
+[ext_resource type="AudioStream" uid="uid://da5te4gc1ani7" path="res://assets/Audio/ld60WinSFX/gasp.mp3" id="9_knw36"]
+[ext_resource type="AudioStream" uid="uid://dwd7wxvto1u26" path="res://assets/Audio/ld60WinSFX/metalPipe.mp3" id="10_unifl"]
+[ext_resource type="AudioStream" uid="uid://ceyhl0mrkwcfg" path="res://assets/Audio/ld60WinSFX/nextBatch.wav" id="11_2oo3t"]
+[ext_resource type="AudioStream" uid="uid://dcn46b6qgbsmh" path="res://assets/Audio/ld60WinSFX/victory.ogg" id="12_id55i"]
+[ext_resource type="Texture2D" uid="uid://b3xlw71rp5wh2" path="res://assets/WalkieSpriteSheet.png" id="13_4tn0k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oueg3"]
 atlas = ExtResource("4_7ej5r")
@@ -412,7 +412,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_skwon"]
 resource_name = "tvFall"
-length = 0.033400000000000006
+length = 0.0334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -595,21 +595,27 @@ libraries/ = SubResource("AnimationLibrary_knw36")
 
 [node name="Ding" type="AudioStreamPlayer" parent="." unique_id=599212564]
 stream = ExtResource("7_4tn0k")
+bus = &"Sfx"
 
 [node name="Falling" type="AudioStreamPlayer" parent="." unique_id=1917443480]
 stream = ExtResource("8_skwon")
+bus = &"Sfx"
 
 [node name="Gasp" type="AudioStreamPlayer" parent="." unique_id=1553883112]
 stream = ExtResource("9_knw36")
+bus = &"Sfx"
 
 [node name="MetalPipe" type="AudioStreamPlayer" parent="." unique_id=1938496065]
 stream = ExtResource("10_unifl")
+bus = &"Sfx"
 
 [node name="NextBatch" type="AudioStreamPlayer" parent="." unique_id=1967586435]
 stream = ExtResource("11_2oo3t")
+bus = &"Sfx"
 
 [node name="Victory" type="AudioStreamPlayer" parent="." unique_id=382238254]
 stream = ExtResource("12_id55i")
+bus = &"Music"
 
 [node name="victoryTimer" type="Timer" parent="." unique_id=922220015]
 wait_time = 4.0
@@ -621,6 +627,16 @@ wait_time = 0.7
 [node name="staretimer" type="Timer" parent="." unique_id=2094029814]
 wait_time = 2.0
 one_shot = true
+
+[node name="greenMode" type="ColorRect" parent="." unique_id=1193447984]
+visible = false
+layout_mode = 0
+offset_left = -191.0
+offset_top = -149.0
+offset_right = 1416.0
+offset_bottom = 1116.0
+mouse_filter = 2
+color = Color(0, 1, 0, 0.395)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -8,10 +8,13 @@ extends Control
 @onready var score: Label = $CanvasLayer/VBoxContainer/score
 
 func _ready() -> void:
+	if Global.greenMode:
+		$greenMode.visible = true
 	score.text = "TVs Fixed: " + str(Global.final_score) + "\nTime Survived: " + str(Global.speedrun_time)
 	Global.speedrun_time = 0.0
 	Global.final_score = 0
 	thrown.play()
+	
 func _on_kicked_out_animation_finished() -> void:
 	if kicked_out.animation == "default":
 		door.play("close")

@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dew0cqo1yh14r"]
 
 [ext_resource type="Script" uid="uid://c45dfqr4rmqtu" path="res://scripts/game_lose.gd" id="1_p73ww"]
-[ext_resource type="Texture2D" uid="uid://bko4pyu5mehy0" path="res://Assets/kickedOutSpriteSheet.png" id="2_caxyl"]
-[ext_resource type="Texture2D" uid="uid://ps4b3erdalwk" path="res://Assets/losebg.png" id="2_w1cie"]
-[ext_resource type="Texture2D" uid="uid://cfkypaq3runhw" path="res://Assets/shop.png" id="3_n6wem"]
-[ext_resource type="Texture2D" uid="uid://b6fbbbdrdg5r5" path="res://Assets/doorslamspritesheet.png" id="4_w1cie"]
+[ext_resource type="Texture2D" uid="uid://bko4pyu5mehy0" path="res://assets/kickedOutSpriteSheet.png" id="2_caxyl"]
+[ext_resource type="Texture2D" uid="uid://ps4b3erdalwk" path="res://assets/losebg.png" id="2_w1cie"]
+[ext_resource type="Texture2D" uid="uid://cfkypaq3runhw" path="res://assets/shop.png" id="3_n6wem"]
+[ext_resource type="Texture2D" uid="uid://b6fbbbdrdg5r5" path="res://assets/doorslamspritesheet.png" id="4_w1cie"]
 [ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="6_c6vjm"]
 [ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="7_i3uld"]
-[ext_resource type="AudioStream" uid="uid://di8l1iciqsg5f" path="res://Assets/Audio/hitGround.wav" id="8_sby6o"]
-[ext_resource type="AudioStream" uid="uid://dv5va0tg5wbov" path="res://Assets/Audio/thrown.wav" id="9_ncymr"]
-[ext_resource type="AudioStream" uid="uid://bke1e1o148g1v" path="res://Assets/Audio/doorClose.wav" id="10_pr1fl"]
+[ext_resource type="AudioStream" uid="uid://di8l1iciqsg5f" path="res://assets/Audio/hitGround.wav" id="8_sby6o"]
+[ext_resource type="AudioStream" uid="uid://dv5va0tg5wbov" path="res://assets/Audio/thrown.wav" id="9_ncymr"]
+[ext_resource type="AudioStream" uid="uid://bke1e1o148g1v" path="res://assets/Audio/doorClose.wav" id="10_pr1fl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr1fl"]
 atlas = ExtResource("4_w1cie")
@@ -175,14 +175,27 @@ text = "Menu"
 [node name="HitGround" type="AudioStreamPlayer2D" parent="." unique_id=529353121]
 position = Vector2(778, 628)
 stream = ExtResource("8_sby6o")
+bus = &"Sfx"
 
 [node name="Thrown" type="AudioStreamPlayer2D" parent="." unique_id=120401897]
 position = Vector2(871, 528)
 stream = ExtResource("9_ncymr")
+bus = &"Sfx"
 
 [node name="DoorClose" type="AudioStreamPlayer2D" parent="." unique_id=1072297228]
 position = Vector2(929, 543)
 stream = ExtResource("10_pr1fl")
+bus = &"Sfx"
+
+[node name="greenMode" type="ColorRect" parent="." unique_id=1513337122]
+visible = false
+layout_mode = 0
+offset_left = -191.0
+offset_top = -149.0
+offset_right = 1416.0
+offset_bottom = 1116.0
+mouse_filter = 2
+color = Color(0, 1, 0, 0.395)
 
 [connection signal="animation_finished" from="door" to="." method="_on_door_animation_finished"]
 [connection signal="animation_finished" from="kickedOut" to="." method="_on_kicked_out_animation_finished"]
