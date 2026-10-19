@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://diknxq1xgeipd"]
+
+[ext_resource type="Script" uid="uid://dthxeyhwod6wy" path="res://scenes/menu/main_menu.gd" id="1_opwyq"]
+[ext_resource type="PackedScene" uid="uid://b3ks758qgtihr" path="res://scenes/volume_slider.tscn" id="2_x1if8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ajci"]
+font_size = 24
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3k5w"]
+font_size = 24
+
+[node name="MainMenu" type="Control" unique_id=529377316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opwyq")
+
+[node name="credits" type="Label" parent="." unique_id=1934855281]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 470.0
+offset_right = 950.0
+offset_bottom = 533.0
+text = "A game by OJ Rodriquez
+For the Texas Game Jam 2026
+No AI was used in the creation of this game"
+label_settings = SubResource("LabelSettings_1ajci")
+horizontal_alignment = 2
+
+[node name="menu_buttons" type="VBoxContainer" parent="." unique_id=1913148766]
+layout_mode = 0
+offset_left = 24.000008
+offset_top = 264.0
+offset_right = 94.00001
+offset_bottom = 365.0
+
+[node name="PlayEasy" type="Button" parent="menu_buttons" unique_id=1660008724]
+layout_mode = 2
+text = "Play Easy Mode"
+
+[node name="PlayHard" type="Button" parent="menu_buttons" unique_id=789061943]
+layout_mode = 2
+text = "Play HARD MODE"
+
+[node name="Options" type="Button" parent="menu_buttons" unique_id=1685548326]
+layout_mode = 2
+text = "Options"
+
+[node name="options_menu" type="Control" parent="menu_buttons" unique_id=1237906274]
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="menu_buttons/options_menu" unique_id=1313138910]
+layout_mode = 0
+offset_left = -113.00001
+offset_top = -513.0
+offset_right = 1051.782
+offset_bottom = 142.34064
+color = Color(0.24269372, 0.24269372, 0.24269372, 0.89500004)
+
+[node name="option_container" type="VBoxContainer" parent="menu_buttons/options_menu" unique_id=1338049285]
+layout_mode = 0
+offset_left = -20.000008
+offset_top = -453.0
+offset_right = 864.0
+offset_bottom = 89.0
+
+[node name="option_label" type="Label" parent="menu_buttons/options_menu/option_container" unique_id=729389579]
+layout_mode = 2
+text = "Options:"
+label_settings = SubResource("LabelSettings_a3k5w")
+horizontal_alignment = 1
+
+[node name="master_label" type="Label" parent="menu_buttons/options_menu/option_container" unique_id=1706860114]
+layout_mode = 2
+text = "Master"
+
+[node name="maste_slider" parent="menu_buttons/options_menu/option_container" unique_id=1462871074 instance=ExtResource("2_x1if8")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="menu_buttons/options_menu/option_container" unique_id=1121910845]
+layout_mode = 2
+text = "Music"
+
+[node name="music_slider" parent="menu_buttons/options_menu/option_container" unique_id=181468849 instance=ExtResource("2_x1if8")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="sfx_label" type="Label" parent="menu_buttons/options_menu/option_container" unique_id=311505603]
+layout_mode = 2
+text = "SFX"
+
+[node name="sfx_slider" parent="menu_buttons/options_menu/option_container" unique_id=702823223 instance=ExtResource("2_x1if8")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="SFXButton" type="Button" parent="menu_buttons/options_menu/option_container" unique_id=2003232671]
+layout_mode = 2
+text = "Play SFX"
+
+[node name="impactLabel" type="Label" parent="menu_buttons/options_menu/option_container" unique_id=1533501336]
+layout_mode = 2
+text = "Impact Frames?
+(Warning: Flashing Lights)"
+
+[node name="impactcontainers" type="HBoxContainer" parent="menu_buttons/options_menu/option_container" unique_id=1890624308]
+layout_mode = 2
+
+[node name="impactEnabled" type="Button" parent="menu_buttons/options_menu/option_container/impactcontainers" unique_id=1576781586]
+layout_mode = 2
+text = "Enable"
+
+[node name="impactDisabled" type="Button" parent="menu_buttons/options_menu/option_container/impactcontainers" unique_id=189952350]
+layout_mode = 2
+text = "Disable"
+
+[node name="back_button" type="Button" parent="menu_buttons/options_menu/option_container" unique_id=1695671281]
+layout_mode = 2
+text = "Back"
+
+[node name="sfx" type="AudioStreamPlayer" parent="menu_buttons/options_menu/option_container" unique_id=2065631902]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=513369937]
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="menu_buttons/PlayEasy" to="." method="_on_play_easy_pressed"]
+[connection signal="pressed" from="menu_buttons/PlayHard" to="." method="_on_play_hard_pressed"]
+[connection signal="pressed" from="menu_buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="menu_buttons/options_menu/option_container/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="menu_buttons/options_menu/option_container/impactcontainers/impactEnabled" to="." method="_on_impact_enabled_pressed"]
+[connection signal="pressed" from="menu_buttons/options_menu/option_container/impactcontainers/impactDisabled" to="." method="_on_impact_disabled_pressed"]
+[connection signal="pressed" from="menu_buttons/options_menu/option_container/back_button" to="." method="_on_back_button_pressed"]

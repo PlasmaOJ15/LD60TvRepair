@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://of3xxtdwq88r"]
 
 [ext_resource type="Script" uid="uid://cjq5xa0auq0km" path="res://scenes/mainMenu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://0cr00032yw15" path="res://Assets/Button.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://0cr00032yw15" path="res://assets/Button.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://assets/bg.png" id="2_jk1qb"]
+[ext_resource type="PackedScene" uid="uid://b3ks758qgtihr" path="res://scenes/volume_slider.tscn" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="4_wu84c"]
+[ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="5_8ln24"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="6_tbmy8"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="7_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="8_5dd4i"]
 
 [sub_resource type="SystemFont" id="SystemFont_87wxl"]
 
@@ -16,8 +23,25 @@ default_font = SubResource("SystemFont_idfeh")
 Button/fonts/font = SubResource("SystemFont_87wxl")
 Button/styles/normal = SubResource("StyleBoxTexture_sl7pq")
 
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font_size = 24
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_lgwnu"]
+stream_count = 3
+stream_0/stream = ExtResource("6_tbmy8")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("7_jk1qb")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("8_5dd4i")
+stream_2/volume = 0.0
+
 [node name="MainMenu" type="CanvasLayer" unique_id=1079479349]
 script = ExtResource("1_l6cm7")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1047950101]
+position = Vector2(733, 348)
+scale = Vector2(3, 3)
+texture = ExtResource("2_jk1qb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1559365536]
 
@@ -69,23 +93,177 @@ theme = SubResource("Theme_58d6l")
 theme_override_font_sizes/font_size = 25
 text = "CREDITS"
 
+[node name="Settings" type="Button" parent="." unique_id=1640256656]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = 67.0
+offset_right = 312.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_58d6l")
+theme_override_font_sizes/font_size = 25
+text = "SETTINGS"
+
 [node name="Quit Button" type="Button" parent="." unique_id=1079850534]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 65.0
-offset_top = 67.0
-offset_right = 311.0
-offset_bottom = 186.0
+offset_left = 329.0
+offset_top = 203.0
+offset_right = 575.0
+offset_bottom = 322.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_58d6l")
 theme_override_font_sizes/font_size = 25
 text = "QUIT!!!"
 
+[node name="options_menu" type="Control" parent="." unique_id=1288925345]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 104.0
+offset_top = 512.0
+offset_right = 104.0
+offset_bottom = 512.0
+
+[node name="ColorRect" type="ColorRect" parent="options_menu" unique_id=1599878190]
+layout_mode = 0
+offset_left = -113.00001
+offset_top = -513.0
+offset_right = 1051.782
+offset_bottom = 142.34064
+color = Color(0.24269372, 0.24269372, 0.24269372, 0.89500004)
+
+[node name="option_container" type="VBoxContainer" parent="options_menu" unique_id=1688778369]
+layout_mode = 0
+offset_left = -20.000008
+offset_top = -453.0
+offset_right = 864.0
+offset_bottom = 89.0
+
+[node name="option_label" type="Label" parent="options_menu/option_container" unique_id=552883397]
+layout_mode = 2
+text = "Options:"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+
+[node name="master_label" type="Label" parent="options_menu/option_container" unique_id=646354423]
+layout_mode = 2
+text = "Master"
+
+[node name="maste_slider" parent="options_menu/option_container" unique_id=109978443 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="options_menu/option_container" unique_id=1393709918]
+layout_mode = 2
+text = "Music"
+
+[node name="music_slider" parent="options_menu/option_container" unique_id=1944896486 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="sfx_label" type="Label" parent="options_menu/option_container" unique_id=1255708952]
+layout_mode = 2
+text = "SFX"
+
+[node name="sfx_slider" parent="options_menu/option_container" unique_id=398990713 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="SFXButton" type="Button" parent="options_menu/option_container" unique_id=344805636]
+layout_mode = 2
+text = "Play SFX"
+
+[node name="impactLabel" type="Label" parent="options_menu/option_container" unique_id=1694228368]
+layout_mode = 2
+text = "Green Mode? (Only available after winning)"
+
+[node name="impactcontainers" type="HBoxContainer" parent="options_menu/option_container" unique_id=1755069318]
+layout_mode = 2
+
+[node name="greenEnabled" type="Button" parent="options_menu/option_container/impactcontainers" unique_id=1032972004]
+layout_mode = 2
+text = "Enable"
+
+[node name="greenDisabled" type="Button" parent="options_menu/option_container/impactcontainers" unique_id=1911401722]
+layout_mode = 2
+text = "Disable"
+
+[node name="back_button" type="Button" parent="options_menu/option_container" unique_id=2069496062]
+layout_mode = 2
+text = "Back"
+
+[node name="sfx" type="AudioStreamPlayer" parent="options_menu/option_container" unique_id=211761787]
+stream = ExtResource("4_wu84c")
+bus = &"Sfx"
+
+[node name="greenMode" type="ColorRect" parent="." unique_id=462307274]
+visible = false
+offset_left = -191.0
+offset_top = -149.0
+offset_right = 1416.0
+offset_bottom = 1116.0
+mouse_filter = 2
+color = Color(0, 1, 0, 0.395)
+
+[node name="Credits" type="Control" parent="." unique_id=587214043]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_8ln24")
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=1891776338]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 1169.0
+offset_bottom = 660.0
+color = Color(0.24313726, 0.24313726, 0.24313726, 0.89411765)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits" unique_id=1881933411]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 152.0
+offset_right = 965.0
+offset_bottom = 476.0
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer" unique_id=1943214755]
+layout_mode = 2
+text = "Credits:
+Game Loop and Art/Animation: OJ Rodriquez
+Simon, Balloon Minigame, and Music: Clovis
+Button Minigame: Emma Rex
+SFX from SFX MAKER by Jeremy Le Grand"
+horizontal_alignment = 1
+
+[node name="creditsBack" type="Button" parent="Credits/VBoxContainer" unique_id=393797027]
+layout_mode = 2
+text = "Back"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=760726827]
+stream = SubResource("AudioStreamSynchronized_lgwnu")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Endless" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="options_menu/option_container/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="options_menu/option_container/impactcontainers/greenEnabled" to="." method="_on_green_enabled_pressed"]
+[connection signal="pressed" from="options_menu/option_container/impactcontainers/greenDisabled" to="." method="_on_green_disabled_pressed"]
+[connection signal="pressed" from="options_menu/option_container/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/creditsBack" to="." method="_on_credits_back_pressed"]

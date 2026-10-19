@@ -67,11 +67,13 @@ autoplay = "default"
 
 [node name="dialTick" type="AudioStreamPlayer2D" parent="." unique_id=997717863]
 stream = ExtResource("2_lyb31")
+bus = &"Sfx"
 
 [node name="dialCorrect" type="AudioStreamPlayer2D" parent="." unique_id=213103273]
 stream = ExtResource("2_lyb31")
 volume_db = 10.0
 pitch_scale = 2.0
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="assets/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="assets/Area2D" to="." method="_on_area_2d_mouse_exited"]

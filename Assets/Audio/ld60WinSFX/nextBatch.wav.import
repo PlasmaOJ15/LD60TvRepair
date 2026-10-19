@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceyhl0mrkwcfg"
-path="res://.godot/imported/nextBatch.wav-f69c72b63568f3b855516afc2c1688c1.sample"
+path="res://.godot/imported/nextBatch.wav-2d7a1370172ae06f432d65dca4526fea.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/ld60WinSFX/nextBatch.wav"
-dest_files=["res://.godot/imported/nextBatch.wav-f69c72b63568f3b855516afc2c1688c1.sample"]
+source_file="res://assets/Audio/ld60WinSFX/nextBatch.wav"
+dest_files=["res://.godot/imported/nextBatch.wav-2d7a1370172ae06f432d65dca4526fea.sample"]
 
 [params]
 

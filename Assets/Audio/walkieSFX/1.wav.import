@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqfdtbkwillv"
-path="res://.godot/imported/1.wav-81859053eef9cc31ce5df5878a40b9e2.sample"
+path="res://.godot/imported/1.wav-c8c29d21bdb21532045f7bcf31f97a5b.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/walkieSFX/1.wav"
-dest_files=["res://.godot/imported/1.wav-81859053eef9cc31ce5df5878a40b9e2.sample"]
+source_file="res://assets/Audio/walkieSFX/1.wav"
+dest_files=["res://.godot/imported/1.wav-c8c29d21bdb21532045f7bcf31f97a5b.sample"]
 
 [params]
 

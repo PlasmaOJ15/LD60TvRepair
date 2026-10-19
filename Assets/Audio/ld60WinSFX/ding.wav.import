@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0tast1t0cu8l"
-path="res://.godot/imported/ding.wav-85d62c240062554971ff8f1715d2fa0b.sample"
+path="res://.godot/imported/ding.wav-52efabda39184b730a2d36aabae20df5.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/ld60WinSFX/ding.wav"
-dest_files=["res://.godot/imported/ding.wav-85d62c240062554971ff8f1715d2fa0b.sample"]
+source_file="res://assets/Audio/ld60WinSFX/ding.wav"
+dest_files=["res://.godot/imported/ding.wav-52efabda39184b730a2d36aabae20df5.sample"]
 
 [params]
 

@@ -7,6 +7,8 @@ extends Control
 @onready var door_close: AudioStreamPlayer2D = $DoorClose
 
 func _ready() -> void:
+	if Global.greenMode:
+		$greenMode.visible = true
 	Global.speedrun_time = 0.0
 	Global.final_score = 0
 	thrown.play()

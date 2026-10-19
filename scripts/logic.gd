@@ -19,6 +19,8 @@ extends Node2D
 @onready var quota: Label = $CanvasLayer/quota
 @onready var lives: Label = $CanvasLayer/lives
 
+@onready var green_square: ColorRect = $"../greenMode"
+
 var liveCount = 3
 var quotaCount = 0
 
@@ -43,6 +45,8 @@ var dDT := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Global.greenMode:
+		green_square.visible = true
 	rng.randomize()
 	randomizeVals()
 	tv.setVals.call_deferred(antL, antR, dialU, dialD)
