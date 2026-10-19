@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c4esnxrgvyyam"]
+
+[ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="1_cnu5t"]
+[ext_resource type="Script" uid="uid://c5h6r0fnsijxx" path="res://scripts/game_win.gd" id="1_l1273"]
+[ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="2_l1273"]
+[ext_resource type="Texture2D" uid="uid://dp6fipdendc6s" path="res://assets/winSpritesheet.png" id="4_7ej5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oueg3"]
+atlas = ExtResource("4_7ej5r")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtd57"]
+atlas = ExtResource("4_7ej5r")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lynnb"]
+atlas = ExtResource("4_7ej5r")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oueg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtd57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lynnb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="gameWin" type="Control" unique_id=1479446763]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1273")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1437367488]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1172968682]
+offset_top = 240.0
+offset_right = 430.0
+offset_bottom = 414.0
+theme = ExtResource("1_cnu5t")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=819236132]
+layout_mode = 2
+text = "You did it!"
+label_settings = ExtResource("2_l1273")
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1416484240]
+layout_mode = 2
+text = "Time Taken: "
+label_settings = ExtResource("2_l1273")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=863076005]
+layout_mode = 2
+text = "Replay?"
+
+[node name="Menu" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1246153189]
+layout_mode = 2
+text = "Menu"
+
+[node name="winSprite" type="AnimatedSprite2D" parent="." unique_id=1311978906]
+position = Vector2(778, 456)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

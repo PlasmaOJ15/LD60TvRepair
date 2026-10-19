@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var endless := false
 @export var debug := false
 
 @onready var repair: Node2D = $"../Repair"
@@ -15,7 +16,12 @@ extends Node2D
 @onready var hand_l: AnimatedSprite2D = $"../hands/handL"
 @onready var hand_r: AnimatedSprite2D = $"../hands/handR"
 
-@onready var correct_tic: AudioStreamPlayer2D = $"../correctTic"
+@onready var quota: Label = $CanvasLayer/quota
+@onready var lives: Label = $CanvasLayer/lives
+
+var liveCount = 3
+var quotaCount = 0
+
 
 var tvScene = preload("res://scenes/tv.tscn")
 
@@ -37,6 +43,8 @@ var dDT := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.speedrun_time = 0.0
+	Global.final_score = 0
 	rng.randomize()
 	randomizeVals()
 	tv.setVals.call_deferred(antL, antR, dialU, dialD)
@@ -129,11 +137,33 @@ func getDialValue(index, value):
 			dDT = false
 			
 	if aLT and aRT and dUT and dDT:
+		quotaCount += 1
+		Global.final_score = quotaCount
+		updateText()
 		active = false
 		aLT = false
 		aRT = false
 		dUT = false
 		dDT = false
 
+func loseLife():
+	liveCount -= 1
+	updateText()
+
+func updateText():
+	if !endless:
+		quota.text = "Quota: " + str(quotaCount) + "/7"
+		lives.text = "Broken TVs till fired: " + str(liveCount)
+		if quotaCount == 7:
+			get_tree().change_scene_to_file("res://scenes/game_win.tscn")
+		if liveCount == 0:
+			get_tree().change_scene_to_file("res://scenes/game_lose.tscn")
+	else:
+		quota.text = "TV's Fixed: " + str(quotaCount)
+		lives.text = "Broken TVs till fired: " + str(liveCount)
+		if liveCount == 0:
+			get_tree().change_scene_to_file("res://scenes/endlessEnd.tscn")
+
 func getTV():
 	return tv
+	
