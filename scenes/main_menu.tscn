@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://of3xxtdwq88r"]
 
 [ext_resource type="Script" uid="uid://cjq5xa0auq0km" path="res://scenes/mainMenu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://0cr00032yw15" path="res://assets/Button.png" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://assets/bg.png" id="2_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://0cr00032yw15" path="res://Assets/Button.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://Assets/bg.png" id="2_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://b3ks758qgtihr" path="res://scenes/volume_slider.tscn" id="3_bqqt6"]
-[ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://assets/Audio/dialTick.wav" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://f0c40vkqffvd" path="res://Assets/QuitButton.png" id="4_5dd4i"]
+[ext_resource type="AudioStream" uid="uid://ckakdws6xt41f" path="res://Assets/Audio/dialTick.wav" id="4_wu84c"]
 [ext_resource type="Theme" uid="uid://gk2s745x223r" path="res://scenes/new_theme.tres" id="5_8ln24"]
-[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="6_tbmy8"]
-[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="7_jk1qb"]
-[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="8_5dd4i"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://Assets/Audio/MusicTracks/BallonGameMusic.wav" id="6_tbmy8"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://Assets/Audio/MusicTracks/ButtonGameMusic.wav" id="7_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://Assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="8_5dd4i"]
 
 [sub_resource type="SystemFont" id="SystemFont_87wxl"]
 
@@ -22,6 +23,14 @@ font_weight = 425
 default_font = SubResource("SystemFont_idfeh")
 Button/fonts/font = SubResource("SystemFont_87wxl")
 Button/styles/normal = SubResource("StyleBoxTexture_sl7pq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+texture = ExtResource("4_5dd4i")
+
+[sub_resource type="Theme" id="Theme_flqon"]
+default_font = SubResource("SystemFont_idfeh")
+Button/fonts/font = SubResource("SystemFont_87wxl")
+Button/styles/normal = SubResource("StyleBoxTexture_lgwnu")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font_size = 24
@@ -116,14 +125,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 329.0
-offset_top = 203.0
+offset_top = 145.0
 offset_right = 575.0
-offset_bottom = 322.0
+offset_bottom = 347.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_58d6l")
+theme = SubResource("Theme_flqon")
 theme_override_font_sizes/font_size = 25
-text = "QUIT!!!"
+text = "I QUIT!!!"
 
 [node name="options_menu" type="Control" parent="." unique_id=1288925345]
 visible = false
