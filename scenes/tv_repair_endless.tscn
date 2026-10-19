@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://bkl8x71m8bf7i"]
+
+[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://assets/bg.png" id="1_evawe"]
+[ext_resource type="Texture2D" uid="uid://0xurmfl603mv" path="res://assets/table.png" id="2_1s5ix"]
+[ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="3_oia6h"]
+[ext_resource type="Script" uid="uid://cwerwt6k3m8ue" path="res://scripts/timer.gd" id="4_pfhcy"]
+[ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="5_yorl7"]
+[ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="6_q7pnl"]
+[ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="7_j2wel"]
+[ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="8_d1yrg"]
+[ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="9_hdqp6"]
+[ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="10_kay2d"]
+[ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="11_fymj7"]
+[ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="12_o3oeq"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="13_e1iby"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="14_mvs21"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="15_x1q5r"]
+[ext_resource type="Texture2D" uid="uid://r5kb8c6kxoxk" path="res://assets/shelfAsset.png" id="16_u6vxb"]
+[ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="17_gvly7"]
+[ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="18_sgb70"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="19_j44d3"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_g4v7s"]
+stream_count = 3
+stream_0/stream = ExtResource("13_e1iby")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("14_mvs21")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("15_x1q5r")
+stream_2/volume = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1152, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_120fa"]
+size = Vector2(1152, 318)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1ob"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lft"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y1sk"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph1ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y1sk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8178"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur2bf"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwfvr"]
+atlas = ExtResource("19_j44d3")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8178"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8178")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur2bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwfvr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TVRepair" type="Node2D" unique_id=754929928]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=626674398]
+position = Vector2(632, 501.00003)
+scale = Vector2(3, 3)
+texture = ExtResource("1_evawe")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=911719875]
+position = Vector2(579, 805.00006)
+scale = Vector2(3, 3)
+texture = ExtResource("2_1s5ix")
+
+[node name="Logic" type="Node2D" parent="." unique_id=1714028281]
+script = ExtResource("3_oia6h")
+endless = true
+debug = true
+
+[node name="debug" type="Node2D" parent="Logic" unique_id=1015605578]
+visible = false
+
+[node name="antennaL" type="ColorRect" parent="Logic/debug" unique_id=1993411561]
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 416.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="antennaR" type="ColorRect" parent="Logic/debug" unique_id=2055397605]
+offset_left = 752.0
+offset_top = 260.0
+offset_right = 792.0
+offset_bottom = 300.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialD" type="ColorRect" parent="Logic/debug" unique_id=214206370]
+offset_left = 887.0
+offset_top = 519.0
+offset_right = 927.0
+offset_bottom = 559.0
+color = Color(1, 0, 0, 1)
+
+[node name="dialU" type="ColorRect" parent="Logic/debug" unique_id=1371329366]
+offset_left = 887.0
+offset_top = 415.0
+offset_right = 927.0
+offset_bottom = 455.0
+color = Color(1, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Logic" unique_id=1817968355]
+script = ExtResource("4_pfhcy")
+
+[node name="lives" type="Label" parent="Logic/CanvasLayer" unique_id=1981106482]
+offset_top = 591.0
+offset_right = 225.0
+offset_bottom = 679.0
+text = "Lives: 3"
+label_settings = ExtResource("5_yorl7")
+
+[node name="quota" type="Label" parent="Logic/CanvasLayer" unique_id=770726715]
+offset_top = 543.0
+offset_right = 263.0
+offset_bottom = 631.0
+text = "TV's Fixed: 0"
+label_settings = ExtResource("5_yorl7")
+
+[node name="time" type="Label" parent="Logic/CanvasLayer" unique_id=564051062]
+offset_left = 888.0
+offset_top = 597.0
+offset_right = 1151.0
+offset_bottom = 685.0
+text = "Time: 0"
+label_settings = ExtResource("5_yorl7")
+horizontal_alignment = 2
+
+[node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
+position = Vector2(0, -88)
+script = ExtResource("6_q7pnl")
+
+[node name="TV1" type="Node2D" parent="Shelf" unique_id=408491865]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("7_j2wel")
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV1" unique_id=1567407690]
+offset_left = 15.0
+offset_top = -29.0
+offset_right = 285.0
+offset_bottom = 204.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
+
+[node name="ButtonGame" parent="Shelf/TV1" unique_id=306496527 instance=ExtResource("8_d1yrg")]
+position = Vector2(-46, -19)
+scale = Vector2(0.333, 0.333)
+
+[node name="tvBg" parent="Shelf/TV1" unique_id=1156385373 instance=ExtResource("9_hdqp6")]
+position = Vector2(179, 55)
+
+[node name="TV2" type="Node2D" parent="Shelf" unique_id=1196470620]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("7_j2wel")
+offset = 400
+
+[node name="ColorRect" type="ColorRect" parent="Shelf/TV2" unique_id=537746979]
+offset_left = 15.0
+offset_top = -28.0
+offset_right = 285.0
+offset_bottom = 205.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Shelf/TV2" unique_id=963304027]
+offset_left = 17.0
+offset_top = -31.0
+offset_right = 1169.0
+offset_bottom = 1130.9048
+scale = Vector2(0.21, 0.21)
+script = ExtResource("10_kay2d")
+
+[node name="SubViewport" type="SubViewport" parent="Shelf/TV2/SubViewportContainer" unique_id=2000141939]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 1142)
+render_target_update_mode = 0
+
+[node name="balloonGame" parent="Shelf/TV2/SubViewportContainer/SubViewport" unique_id=1874709638 instance=ExtResource("11_fymj7")]
+position = Vector2(584, 800)
+
+[node name="tvBg" parent="Shelf/TV2" unique_id=528871551 instance=ExtResource("9_hdqp6")]
+position = Vector2(179, 54.999996)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="TV3" type="Node2D" parent="Shelf" unique_id=1083899338]
+visible = false
+position = Vector2(1209, 46)
+script = ExtResource("7_j2wel")
+offset = 800
+
+[node name="ColorRect2" type="ColorRect" parent="Shelf/TV3" unique_id=365708726]
+offset_left = 15.0
+offset_top = -28.0
+offset_right = 285.0
+offset_bottom = 205.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 1)
+
+[node name="SimonSays" parent="Shelf/TV3" unique_id=1031054397 instance=ExtResource("12_o3oeq")]
+position = Vector2(141, 81)
+scale = Vector2(0.215, 0.215)
+
+[node name="tvBg" parent="Shelf/TV3" unique_id=1211779876 instance=ExtResource("9_hdqp6")]
+position = Vector2(179, 55)
+
+[node name="music" type="AudioStreamPlayer" parent="Shelf" unique_id=1843814436]
+stream = SubResource("AudioStreamSynchronized_g4v7s")
+volume_db = -10.0
+
+[node name="assets" type="Node2D" parent="Shelf" unique_id=1839037105]
+
+[node name="Shelf" type="Sprite2D" parent="Shelf/assets" unique_id=1617754265]
+position = Vector2(576, 376.00003)
+scale = Vector2(3, 3)
+texture = ExtResource("16_u6vxb")
+
+[node name="Repair" type="Node2D" parent="." unique_id=553423842]
+position = Vector2(0, 120)
+
+[node name="TV" parent="Repair" unique_id=1870081773 instance=ExtResource("17_gvly7")]
+position = Vector2(580, 499)
+
+[node name="cameraMovement" type="Node2D" parent="." unique_id=1004633116]
+position = Vector2(576, 488)
+script = ExtResource("18_sgb70")
+
+[node name="cameraMoveUp" type="Area2D" parent="cameraMovement" unique_id=682135890]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveUp" unique_id=1119773206]
+position = Vector2(576, 136)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="cameraMoveDown" type="Area2D" parent="cameraMovement" unique_id=1077539246]
+position = Vector2(-576, -488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraMovement/cameraMoveDown" unique_id=408506770]
+position = Vector2(576, 431)
+shape = SubResource("RectangleShape2D_120fa")
+
+[node name="camera" type="Camera2D" parent="cameraMovement" unique_id=923564496]
+
+[node name="hands" type="Node2D" parent="." unique_id=1658747221]
+
+[node name="handL" type="AnimatedSprite2D" parent="hands" unique_id=459879618]
+position = Vector2(200.00002, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="handR" type="AnimatedSprite2D" parent="hands" unique_id=711839900]
+position = Vector2(950, 682)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k8178")
+autoplay = "default"
+flip_h = true
+
+[connection signal="gameOver" from="Shelf/TV1/ButtonGame" to="Shelf" method="_on_button_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV2/SubViewportContainer/SubViewport/balloonGame" to="Shelf" method="_on_balloon_game_game_over"]
+[connection signal="gameOver" from="Shelf/TV3/SimonSays" to="Shelf" method="_on_simon_says_game_over"]
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveUp" to="cameraMovement" method="_on_camera_move_up_mouse_entered"]
+[connection signal="mouse_entered" from="cameraMovement/cameraMoveDown" to="cameraMovement" method="_on_camera_move_down_mouse_entered"]

@@ -7,8 +7,10 @@
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
 [ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="3_iwfvr"]
 [ext_resource type="PackedScene" uid="uid://dumvchbeupcg2" path="res://scenes/tv_bg.tscn" id="4_6y1sk"]
+[ext_resource type="Script" uid="uid://cwerwt6k3m8ue" path="res://scripts/timer.gd" id="4_pxf2r"]
 [ext_resource type="PackedScene" uid="uid://b85km7tmsqm5h" path="res://scenes/button_game.tscn" id="5_6vb1h"]
 [ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="5_ph1ob"]
+[ext_resource type="LabelSettings" uid="uid://4rvyhdtmlg6" path="res://scenes/new_label_settings.tres" id="5_xmv3w"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
 [ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
@@ -137,6 +139,32 @@ offset_top = 415.0
 offset_right = 927.0
 offset_bottom = 455.0
 color = Color(1, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Logic" unique_id=1817968355]
+script = ExtResource("4_pxf2r")
+
+[node name="lives" type="Label" parent="Logic/CanvasLayer" unique_id=1981106482]
+offset_top = 591.0
+offset_right = 225.0
+offset_bottom = 679.0
+text = "Lives: 3"
+label_settings = ExtResource("5_xmv3w")
+
+[node name="quota" type="Label" parent="Logic/CanvasLayer" unique_id=770726715]
+offset_top = 543.0
+offset_right = 263.0
+offset_bottom = 631.0
+text = "Quota: 7"
+label_settings = ExtResource("5_xmv3w")
+
+[node name="time" type="Label" parent="Logic/CanvasLayer" unique_id=564051062]
+offset_left = 888.0
+offset_top = 597.0
+offset_right = 1151.0
+offset_bottom = 685.0
+text = "Time: 0"
+label_settings = ExtResource("5_xmv3w")
+horizontal_alignment = 2
 
 [node name="Shelf" type="Node2D" parent="." unique_id=2002730654]
 position = Vector2(0, -88)

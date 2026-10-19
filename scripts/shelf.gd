@@ -1,5 +1,9 @@
 extends Node2D
 
+@export var tutorial := false
+
+@onready var logic: Node2D = $"../Logic"
+
 var tvsActive = 0
 @onready var tv_1: Node2D = $TV1
 @onready var tv_2: Node2D = $TV2
@@ -23,10 +27,12 @@ func _ready() -> void:
 
 func activateTV():
 	print(tvsActive-1)
-	music.stream.set_sync_stream_volume(tvsActive-1, 0.0)
+	if !tutorial:
+		music.stream.set_sync_stream_volume(tvsActive-1, 0.0)
+		currTV.startGame()
 	currTV.visible = true
 	currTV.enterFrame()
-	currTV.startGame()
+	
 		
 func getInactiveTV():
 	var worked = false
@@ -38,12 +44,15 @@ func getInactiveTV():
 	return worked
 	
 func addTV():
+	if tutorial:
+		$"../tutorialScreen".turnOnTutorial()
 	if getInactiveTV() == true:
 		tvsActive += 1
 		activateTV()
 		print("added TV")
 
 func removeTV(tvVal: int):
+	logic.loseLife()
 	tvsActive -= 1
 	music.stream.set_sync_stream_volume(tvsActive, -100.0)
 	for i in range(tvPositions.size()):
