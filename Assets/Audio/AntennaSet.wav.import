@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c1qmxaafq2cp1"
-path="res://.godot/imported/AntennaSet.wav-7f9227c3b6ace0a790eb1cb441b333dd.sample"
+path="res://.godot/imported/AntennaSet.wav-7da8783524ab3d48564b862343977c87.sample"
 
 [deps]
 
-source_file="res://assets/Audio/AntennaSet.wav"
-dest_files=["res://.godot/imported/AntennaSet.wav-7f9227c3b6ace0a790eb1cb441b333dd.sample"]
+source_file="res://Assets/Audio/AntennaSet.wav"
+dest_files=["res://.godot/imported/AntennaSet.wav-7da8783524ab3d48564b862343977c87.sample"]
 
 [params]
 

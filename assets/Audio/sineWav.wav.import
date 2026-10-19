@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c8lpj1a2u1jdo"
-path="res://.godot/imported/sineWav.wav-a6cacc64153a16fcfa244170702a1fd8.sample"
+path="res://.godot/imported/sineWav.wav-e9fe5e5d32b098ee6b337707e5357f53.sample"
 
 [deps]
 
-source_file="res://assets/Audio/sineWav.wav"
-dest_files=["res://.godot/imported/sineWav.wav-a6cacc64153a16fcfa244170702a1fd8.sample"]
+source_file="res://Assets/Audio/sineWav.wav"
+dest_files=["res://.godot/imported/sineWav.wav-e9fe5e5d32b098ee6b337707e5357f53.sample"]
 
 [params]
 

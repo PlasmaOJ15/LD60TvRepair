@@ -2,6 +2,8 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walkie_sprite: AnimatedSprite2D = $walkieSprite
 @onready var talkie_sprite: AnimatedSprite2D = $talkieSprite
+@onready var walkie_talkie: AudioStreamPlayer2D = $walkieTalkie
+@onready var walkie_green: AudioStreamPlayer2D = $walkieGreen
 
 var currPos = -1
 var tutorialActive = true
@@ -20,14 +22,17 @@ func _process(delta: float) -> void:
 			talkie_sprite.visible = true
 			walkie_sprite.play("talk")
 			$textGreen.visible = true
+			walkie_green.play()
 		elif currPos == 0:
 			$textGreen.visible = false
 			talkie_sprite.visible = true
 			walkie_sprite.play("talk")
 			$text1.visible = true
+			walkie_talkie.play()
 		elif currPos == 1:
 			$text1.visible = false
 			$text2.visible = true
+			walkie_talkie.play()
 		elif currPos == 2:
 			tutorialActive = false
 			$text2.visible = false
@@ -38,15 +43,19 @@ func _process(delta: float) -> void:
 			talkie_sprite.visible = true
 			walkie_sprite.play("talk")
 			$text3.visible = true
+			walkie_talkie.play()
 		elif currPos == 4:
 			$text3.visible = false
 			$text4.visible = true
+			walkie_talkie.play()
 		elif currPos == 5:
 			$text4.visible = false
 			$text5.visible = true
+			walkie_talkie.play()
 		elif currPos == 6:
 			$text5.visible = false
 			$text6.visible = true
+			walkie_talkie.play()
 		elif currPos == 7:
 			tutorialActive = false
 			$text6.visible = false

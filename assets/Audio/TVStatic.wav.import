@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bdlvakke237df"
-path="res://.godot/imported/TVStatic.wav-3fce680300f7972bd1ff94ccb4b4dc7c.sample"
+path="res://.godot/imported/TVStatic.wav-c6186d8768c5960737b259fbdf3a9dea.sample"
 
 [deps]
 
-source_file="res://assets/Audio/TVStatic.wav"
-dest_files=["res://.godot/imported/TVStatic.wav-3fce680300f7972bd1ff94ccb4b4dc7c.sample"]
+source_file="res://Assets/Audio/TVStatic.wav"
+dest_files=["res://.godot/imported/TVStatic.wav-c6186d8768c5960737b259fbdf3a9dea.sample"]
 
 [params]
 

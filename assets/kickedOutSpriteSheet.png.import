@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bko4pyu5mehy0"
-path="res://.godot/imported/kickedOutSpriteSheet.png-8ed5bf15f5ea598b7ca5206a0e70fb07.ctex"
+path="res://.godot/imported/kickedOutSpriteSheet.png-eabd14112d57a9c4fcb500171175f91a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kickedOutSpriteSheet.png"
-dest_files=["res://.godot/imported/kickedOutSpriteSheet.png-8ed5bf15f5ea598b7ca5206a0e70fb07.ctex"]
+source_file="res://Assets/kickedOutSpriteSheet.png"
+dest_files=["res://.godot/imported/kickedOutSpriteSheet.png-eabd14112d57a9c4fcb500171175f91a.ctex"]
 
 [params]
 

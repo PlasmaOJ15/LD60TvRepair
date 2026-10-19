@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bvavbwdtlpjoj"]
 
-[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://assets/bg.png" id="1_67h2a"]
+[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://Assets/bg.png" id="1_67h2a"]
 [ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="1_l8d2w"]
-[ext_resource type="Texture2D" uid="uid://0xurmfl603mv" path="res://assets/table.png" id="2_fh53y"]
+[ext_resource type="Texture2D" uid="uid://0xurmfl603mv" path="res://Assets/table.png" id="2_fh53y"]
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="2_onf2w"]
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="2_p04im"]
 [ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="3_iwfvr"]
@@ -14,11 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="6_liy50"]
 [ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="7_h3lft"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="8_120fa"]
-[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="9_g0bpt"]
-[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
-[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
-[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
-[ext_resource type="Texture2D" uid="uid://r5kb8c6kxoxk" path="res://assets/shelfAsset.png" id="12_iwfvr"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://Assets/PlayerSpritesheet.png" id="9_g0bpt"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://Assets/Audio/MusicTracks/BallonGameMusic.wav" id="9_iwfvr"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://Assets/Audio/MusicTracks/ButtonGameMusic.wav" id="10_67h2a"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://Assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="11_fh53y"]
+[ext_resource type="Texture2D" uid="uid://r5kb8c6kxoxk" path="res://Assets/shelfAsset.png" id="12_iwfvr"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_g4v7s"]
 stream_count = 3
@@ -110,6 +110,7 @@ script = ExtResource("1_l8d2w")
 debug = true
 
 [node name="debug" type="Node2D" parent="Logic" unique_id=1015605578]
+visible = false
 
 [node name="antennaL" type="ColorRect" parent="Logic/debug" unique_id=1993411561]
 offset_left = 376.0

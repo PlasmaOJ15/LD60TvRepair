@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bx7e6grtlxo7u"]
 
-[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://assets/bg.png" id="1_x50wi"]
-[ext_resource type="Texture2D" uid="uid://0xurmfl603mv" path="res://assets/table.png" id="2_8b0lm"]
+[ext_resource type="Texture2D" uid="uid://bhoyxppscvh5i" path="res://Assets/bg.png" id="1_x50wi"]
+[ext_resource type="Texture2D" uid="uid://0xurmfl603mv" path="res://Assets/table.png" id="2_8b0lm"]
 [ext_resource type="Script" uid="uid://dityr10xd7nh7" path="res://scripts/logic.gd" id="3_oqv8o"]
 [ext_resource type="Script" uid="uid://5jteh6ua2mq8" path="res://scripts/shelf.gd" id="4_ig417"]
 [ext_resource type="Script" uid="uid://dja13hocpto30" path="res://scripts/tvShelf.gd" id="5_1d1hl"]
@@ -9,18 +9,24 @@
 [ext_resource type="Script" uid="uid://b4ijd51i0kxf" path="res://scripts/balloonHelper.gd" id="8_xqesd"]
 [ext_resource type="PackedScene" uid="uid://bb5od6v2hn7ju" path="res://scenes/Balloon.tscn" id="9_0o5x3"]
 [ext_resource type="PackedScene" uid="uid://dk7dyqq6tbbc3" path="res://scenes/simon_says.tscn" id="10_ekcq6"]
-[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://assets/Audio/MusicTracks/BallonGameMusic.wav" id="11_xfl2u"]
-[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://assets/Audio/MusicTracks/ButtonGameMusic.wav" id="12_lutgc"]
-[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="13_4n6a5"]
-[ext_resource type="Texture2D" uid="uid://r5kb8c6kxoxk" path="res://assets/shelfAsset.png" id="14_rufc1"]
+[ext_resource type="AudioStream" uid="uid://de7wak8qtoo8h" path="res://Assets/Audio/MusicTracks/BallonGameMusic.wav" id="11_xfl2u"]
+[ext_resource type="AudioStream" uid="uid://ch7q8w3nlqrsl" path="res://Assets/Audio/MusicTracks/ButtonGameMusic.wav" id="12_lutgc"]
+[ext_resource type="AudioStream" uid="uid://mc433knaa4gd" path="res://Assets/Audio/MusicTracks/SimonSaysGameMusic.wav" id="13_4n6a5"]
+[ext_resource type="Texture2D" uid="uid://r5kb8c6kxoxk" path="res://Assets/shelfAsset.png" id="14_rufc1"]
 [ext_resource type="PackedScene" uid="uid://bj1elcs2dijcd" path="res://scenes/tv.tscn" id="15_20735"]
 [ext_resource type="Script" uid="uid://boe323yei8yqi" path="res://scripts/camera_movement.gd" id="16_hklit"]
-[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://assets/PlayerSpritesheet.png" id="17_33gi0"]
-[ext_resource type="Texture2D" uid="uid://b3xlw71rp5wh2" path="res://assets/WalkieSpriteSheet.png" id="18_8b0lm"]
+[ext_resource type="Texture2D" uid="uid://pvgnxbyxpvtj" path="res://Assets/PlayerSpritesheet.png" id="17_33gi0"]
+[ext_resource type="Texture2D" uid="uid://b3xlw71rp5wh2" path="res://Assets/WalkieSpriteSheet.png" id="18_8b0lm"]
 [ext_resource type="Script" uid="uid://u0v6n1bhh802" path="res://scripts/tutorial_screen.gd" id="18_oqv8o"]
-[ext_resource type="Texture2D" uid="uid://hk3cf0lpgj58" path="res://assets/buttonSpriteSheet.png" id="20_1d1hl"]
-[ext_resource type="Texture2D" uid="uid://da3n2xil8wqlf" path="res://assets/TalkSpritesheet.png" id="20_ig417"]
+[ext_resource type="Texture2D" uid="uid://hk3cf0lpgj58" path="res://Assets/buttonSpriteSheet.png" id="20_1d1hl"]
+[ext_resource type="AudioStream" uid="uid://spo4ite784eh" path="res://Assets/Audio/walkieSFX/soGreen.wav" id="20_3xbjx"]
+[ext_resource type="Texture2D" uid="uid://da3n2xil8wqlf" path="res://Assets/TalkSpritesheet.png" id="20_ig417"]
 [ext_resource type="Script" uid="uid://cnfxvwqx8tjy2" path="res://scripts/startButton.gd" id="20_slh7x"]
+[ext_resource type="AudioStream" uid="uid://bqfdtbkwillv" path="res://Assets/Audio/walkieSFX/1.wav" id="20_xfl2u"]
+[ext_resource type="AudioStream" uid="uid://dhv35ysdga8la" path="res://Assets/Audio/walkieSFX/2.wav" id="21_lutgc"]
+[ext_resource type="AudioStream" uid="uid://dd4hrfj8j8f2a" path="res://Assets/Audio/walkieSFX/3.wav" id="22_4n6a5"]
+[ext_resource type="AudioStream" uid="uid://6x1xh6qd108w" path="res://Assets/Audio/walkieSFX/4.wav" id="23_rufc1"]
+[ext_resource type="AudioStream" uid="uid://dv1ukdrvy1gh5" path="res://Assets/Audio/walkieSFX/5.wav" id="24_20735"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1d1hl"]
 font_size = 64
@@ -244,6 +250,14 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bhunq"]
+streams_count = 5
+stream_0/stream = ExtResource("20_xfl2u")
+stream_1/stream = ExtResource("21_lutgc")
+stream_2/stream = ExtResource("22_4n6a5")
+stream_3/stream = ExtResource("23_rufc1")
+stream_4/stream = ExtResource("24_20735")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
 
@@ -607,6 +621,14 @@ offset_bottom = 690.0
 text = "Anyways, press the button on the shelf to start your shift! Good luck!"
 label_settings = SubResource("LabelSettings_g4v7s")
 autowrap_mode = 2
+
+[node name="walkieTalkie" type="AudioStreamPlayer2D" parent="tutorialScreen" unique_id=1487094771]
+position = Vector2(1030, 715)
+stream = SubResource("AudioStreamRandomizer_bhunq")
+
+[node name="walkieGreen" type="AudioStreamPlayer2D" parent="tutorialScreen" unique_id=2136482342]
+position = Vector2(1030, 715)
+stream = ExtResource("20_3xbjx")
 
 [node name="Button" type="Button" parent="." unique_id=2016412979]
 offset_left = 1077.0
