@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="LD60TvRepair"
-run/main_scene="uid://of3xxtdwq88r"
+run/main_scene="uid://coxvwlt23dcst"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bnkqjjv4ehqed"
 
 [autoload]
 

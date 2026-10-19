@@ -11,6 +11,7 @@ func _physics_process(_delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		var direction := Input.get_axis("move_l", "move_r")
 		if direction:
+			$"../Wdarrows".visible = false
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)

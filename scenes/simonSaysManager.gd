@@ -50,6 +50,7 @@ func startGame():
 	ResetGame()
 
 func ResetGame():
+	$SimonSays.visible = true
 	RandomizeTimeUntilNextPattern();
 	color_rect.visible = true;
 	color_rect.color = Color(0.19, 0.19, 0.19, 1.0);
@@ -68,6 +69,7 @@ func RandomizePattern():
 	colorPatterns = [randomColor1, randomColor2, randomColor3]
 	
 func ShowPattern():
+	$SimonSays.visible = false
 	RandomizePattern();
 	color_rect.visible = true;
 	simon_ready.play()
